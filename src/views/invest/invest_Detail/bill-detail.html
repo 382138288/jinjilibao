@@ -221,209 +221,7 @@
 				</div>
 			</div>
 
-			<div class="bill-detail-info" ng-if="product.type != 1">
-				<div class="bill-info-title">
-					<p ng-click="onClick('产品描述',$event)" class="" ng-if="product.type == 3" ng-class="{true:'actived'}[isShowProInfo]">产品描述</p>
-					<p ng-click="onClick('项目介绍',$event)" class="" ng-if="product.type != 1" ng-class="{true:'actived'}[isShowIntroduce]">项目介绍</p>
-					<p ng-click="onClick('本息保障',$event)" class="" ng-if="product.type != 1" ng-class="{true:'actived'}[isShowGuarantee]">安全保障</p>
-					<p ng-click="onClick('投资记录',$event)" class="" ng-class="{true: 'actived'}[product.type == 1 || isShowInvest == true]">投资记录<span>({{bill.total}})</span></p>
-				</div>
-				<!-- 投资记录 -->
-				<div class="info-wrap">
-					<div ng-show="isShowProInfo" ng-if="product.type == 3" class="newhand-detail-info">
-						<table>
-							<tr>
-								<td class="con" width="67%">
-									<div class="inner">
-										<span>产品介绍</span>
-										<p>针对人群：针对在{{global.title}}注册的新用户<br>产品特点：收益高、周期短、回款快<br>参与规则：每位新用户仅有一次投资机会，单笔投资最高限额<i>10,000</i>元</p>
-									</div>
-								</td>
-								<td class="ico" width="33%"><i class="icoa"></i></td>
-							</tr>
-						</table>
-						<table>
-							<tr>
-								<td class="con">
-									<div class="inner">
-										<span>回款方式</span>
-										<p>新手标投资期限为7天，到期后本金+收益返回到<br>个人账户</p>
-									</div>
-								</td>
-								<td class="ico"><i class="icob"></i></td>
-							</tr>
-						</table>
-						<table>
-							<tr>
-								<td class="con">
-									<div class="inner">
-										<span>计算收益</span>
-										<p>以10,000元为例：<br>金吉利宝平台新手专享标历史年化收益<b>15%</b>，产品期限<b>7</b>天，到期后<br>收益较某某宝理财产品多赚了<b>20.2</b>元</p>
-									</div>
-								</td>
-								<td class="ico"><i class="icoc"></i></td>
-							</tr>
-						</table>
-						<table class="bot">
-							<tr>
-								<td class="con">
-									<div class="inner">
-										<span>资金安全</span>
-										<p>1. 对用户资金进行独立管理和监督，<br> &nbsp; &nbsp; 实现资金隔离<br>2. 严格的风控体系确保票据真实、合法、有效<br>3. 六重还款来源，为用户资金安全再升级</p>
-									</div>
-								</td>
-								<td class="ico"><i class="icod"></i></td>
-							</tr>
-						</table>
-					</div>
-
-
-					<div ng-show="isShowHDXQ" class="center-wrap"><img style="width: 100%;height:100%;" src="{{pcDetailImg}}"></div>
-
-					<div ng-show="isShowIntroduce" class="info-box intro-box" ng-if="product.type != 1">
-						<div class="center-wrap">
-							<div class="title" ng-if="product.principlePC!=undefined && product.principlePC!=''"><i class="bill-principle"></i><span>产品原理</span></div>
-							<div class="principle-detail" ng-if="product.principlePC!=undefined && product.principlePC!=''"><img src="{{product.principlePC}}"></div>
-							<div class="title"><i class="bill-check"></i><span>审核项目</span></div>
-							<ul class="check-box" ng-if="projectListData == false">
-								<li><span>公司工商信息</span><i class="bill-tick"></i><b>已审核</b></li>
-								<li><span>营业执照</span><i class="bill-tick"></i><b>已审核</b></li>
-								<li><span>开户许可证</span><i class="bill-tick"></i><b>已审核</b></li>
-								<li><span>法人及股东身份证</span><i class="bill-tick"></i><b>已审核</b></li>
-								<li><span>公司章程</span><i class="bill-tick"></i><b>已审核</b></li>
-								<li><span>经营场所实地认证</span><i class="bill-tick"></i><b>已审核</b></li>
-							</ul>
-							<ul class="check-box" ng-if="projectListData == true">
-								<li ng-repeat="item in projectList"><span>{{item}}</span><i class="bill-tick"></i><b>已审核</b></li>
-							</ul>
-							<div class="pro-detail" ng-if="pics.length>0">
-								<div class="center-title">
-									<div><span>产品资料情况</span></div>
-								</div>
-								<div class="img-detail">
-									<div class="bill-turn-left"></div>
-									<div class="imgs swiper-container">
-										<ul class="swiper-wrapper"><li ng-repeat="item in pics" class="swiper-slide" repeat-finish="renderFinish()"><div><img src="{{item.bigUrl}}"></div></li></ul>
-									</div>
-									<div class="bill-turn-right"></div>
-								</div>
-							</div>
-							<div class="title" ng-show="extendInfos.length>0 || investListPast.length>0"><i class="bill-info"></i><span>产品说明</span></div>
-							<table>
-								<tr ng-repeat="item in extendInfos">
-									<td class="t">{{item.title}}</td>
-									<td class="c">{{item.content}}</td>
-								</tr>
-								<tr class="last" ng-show="showPast == true">
-									<td class="t">债权出让人</td>
-									<td class="c">共{{totalPast}}人持有<span ng-show="showPastList == false" ng-click="showPastList = true"><i>＋</i>查看详情</span><span ng-show="showPastList == true" ng-click="showPastList = false"><i>－</i>查看详情</span></td>
-								</tr>
-							</table>
-							<div class="past-wrap" ng-if="showPast == true" ng-show="showPastList == true">
-								<div class="past-title">
-									<div class="stitle"><span class="l">债权出让人</span><span class="r">出让债权额</span></div>
-									<div class="stitle"><span class="l">债权出让人</span><span class="r">出让债权额</span></div>
-								</div>
-								<ul class="pastlist">
-									<li ng-repeat="item in investListPast"><span class="l"><i>{{item.realName}}</i>{{item.mobilephone | limitTo:2}}*******{{item.mobilephone | limitTo:-2}}</span><span class="r">{{item.amount | currency:''}}元</span></li>
-								</ul>
-								<div class="page-wrap">
-									<div class="page-box">
-										<a href ng-click="onClickPastPage('beforPage',a)" class="prev">上一页</a><ul><li ng-click="onClickPastPage('currentPage',a)" ng-repeat="a in billPast.pages"><a href="" ng-class="{true: 'cur', false: ''}[billPast.pageOn == a]">{{a}}</a></li></ul><a href class="next" ng-click="onClickPastPage('nextPage',a)">下一页</a>
-									</div><span>共{{billPast.totalPage}}页</span>
-								</div>
-							</div>
-							<i class="bill-infobg" ng-show="extendInfos.length>0 || investListPast.length>0"></i>                        
-						</div>
-						<ul class="feature-mode">
-							<li ng-if='product.borrower!=undefined && product.borrower!=""'>
-								<i class="bill-person"></i>
-								<div class="info">
-									<span class="title">债务人概况</span>
-									<p ng-repeat="item in product.borrower">{{item}}</p>
-								</div>
-							</li>
-							<li ng-if='product.introduce!=undefined && product.introduce!=""'>
-								<i class="bill-accept"></i>
-								<div class="info">
-									<span class="title">承兑方概况</span>
-									<p ng-repeat="item in product.introduce">{{item}}</p>
-								</div>
-							</li>
-							<li ng-if='product.repaySource!=undefined && product.repaySource!=""'>
-								<i class="bill-payment"></i>
-								<div class="info">
-									<span class="title">还款来源</span>
-									<p ng-repeat="item in product.repaySource">{{item}}</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-
-					<div ng-show="isShowGuarantee" class="info-box guarantee-box" ng-if="product.type != 1">
-						<ul class="aqbz">
-							<li>
-								<div class="feature-mode-text fl">
-									<div class="bill-aqbza"></div>
-									<h1>两大顶级律师事务所合规支持</h1>
-									<p style="padding-bottom: 20px;">{{global.title}}平台聘用了国内顶级律师事务所作为公司的常年法律顾问。</p>
-									<p>{{global.title}}平台所有业务活动以及相关合同和协议均咨询律师事务所，确保其符合相关法律法规，{{global.title}}平台合法守信经营，让{{global.title}}平台的用户权益受国家法律保护。</p>
-								</div>
-								<div class="bill-aqbzimga fr"></div>
-							</li>
-							<li>
-								<div class="feature-mode-text" style="width:100%;padding:0;">
-									<h1 style="text-align: center;"><span class="bill-aqbzb"></span>360°严格风控体系</h1>
-									<p style="text-align: center;">{{global.title}}平台拥有强大专业的风控团队，采用银行级的风控制度和流程。</p>
-								</div>
-								<div class="bill-aqbzimgb" style="margin:30px auto;"></div>
-							</li>
-							<li>
-								<div class="feature-mode-text fl">
-									<div class="bill-aqbzc"></div>
-									<h1>千万级风险拨备金垫付</h1>
-									<p>{{global.title}}平台在平台成立之初就在银行拨备了<span>3000万</span>元人民币，作为风险拨备金，一旦借款人还款出现逾期时，将由风险拨备金进行先行垫付。该笔风险拨备金会根据平台每月待收金额的增加而增加，并由银行定期出具该笔资金的报告。</p>
-								</div>
-								<div class="bill-aqbzimgc fr"></div>
-							</li>
-							<li>
-								<div class="feature-mode-text fr">
-									<div class="bill-aqbzd"></div>
-									<h1>合作保障机构</h1>
-									<p>{{global.title}}平台已和业内多家专业的商业保理公司和担保公司达成合作。针对不同的项目，将有相应的合作保障机构进行担保。一旦借款人还款出现坏账，将由相应的合作保障机构对投资人的本息进行100%垫付。</p>
-								</div>
-								<div class="bill-aqbzimgd fl"></div>
-							</li>
-							<li>
-								<div class="feature-mode-text fl" style="width:460px;">
-									<div class="bill-aqbze"></div>
-									<h1>银行级网站技术</h1>
-									<p>{{global.title}}平台有用<span>强大专业的互联网技术团队</span>，核心成员来自著名的互联网金融公司有丰富的行业经验。同时{{global.title}}平台的网络系统采用了阿里巴巴集团旗下的“阿里云”金融解决方案，该技术平台通过了公安部等级保护评测，达到了银行级技术水平。</p>
-								</div>
-								<div class="bill-aqbzimge fr"></div>
-							</li>
-						</ul>
-					</div>
-					<div ng-show="isShowInvest" class="info-box record-box" ng-class="{1: 'actived-box'}[product.type]">
-						<table class="record-table">
-							<tr>
-								<th width="10%">投资人</th>
-								<th width="60%">金额（元）</th>
-								<th width="30%">时间</th>
-							</tr>
-							<tr ng-repeat="item in investList" ng-class="{0: 'active', 1: ''}[($index + 1) % 2]">
-								<td>{{item.mobilephone | limitTo:2}}*******{{item.mobilephone | limitTo:-2}}</td><!-- {{item.realName| limitTo:1}}{{item.sex|isSex}} -->
-								<td>{{item.amount | currency:''}}</td>
-								<td>{{item.investTime |  date:'yyyy-MM-dd H:mm'}}</td>
-							</tr>
-							<tr><td colspan="3" class="nolist" ng-if="investList.length == 0">暂无该产品投资记录</td></tr>
-						</table>
-						
-						<!-- 页码 -->
-						<dr-pg></dr-pg>
-					</div>
-				</div>
-			</div>
+			
 			<div class="invest-detail-info">
 				<div class="invest-detail-title">
 					<span ng-class="{active:active==1}" ng-click="activeFn(1)">产品介绍</span>
@@ -537,7 +335,18 @@
 								风控评级
 							</th>
 							<td>
-								基础信息：完善 信用能力：良好 还款能力：佳 资产变现：良好
+								<dl class="fkpg">
+									<dt>
+										<span>{{scoreList.icon}}</span>
+									</dt>
+									<dd>
+										<ul class="rzxx">
+											<li ng-repeat="item in riskRatingList track by $index" ng-if="item.status==1">
+												{{item.name}}：{{item.rating}}
+											</li>
+										</ul>
+									</dd>
+								</dl>
 							</td>
 						</tr>
 						<tr>
@@ -545,7 +354,7 @@
 								保障资料
 							</th>
 							<td>
-								<img src="" />
+								<a ng-href="{{item.bigUrl}}" target="_blank" ng-repeat="item in pics"><img ng-src="{{item.bigUrl}}" class="bzzl" /></a>
 							</td>
 						</tr>
 						<tr>
@@ -564,7 +373,7 @@
 							<th width="200" valign="top">
 								{{item.title}}
 							</th>
-							<td ng-bind-html="item.content">
+							<td ng-bind-html="item.content|textarea">
 																
 							</td>
 						</tr>

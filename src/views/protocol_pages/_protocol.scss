@@ -3,6 +3,9 @@
 	margin: 0 auto;
 	padding: 0 20px;
 	width: 80%;
+    b{
+        font-weight: bold;
+    }
 	.webapp-title{
 		height: 3.40741rem;
 	    background: $globalColor;
@@ -94,7 +97,7 @@
 		}
 	}
 	&.loan-protocol{
-		background: image-url('protocolbg.png') 128px 384px no-repeat;
+		// background: image-url('protocolbg.png') 128px 384px no-repeat;
 		h1{
 			padding-bottom: 20px;
 		}

@@ -1,14 +1,14 @@
 <div class="home-wrapper">
     <div class="home-banner">
-        <div class="swiper-container" id='swiper1'>
+        <!-- <div class="swiper-container" id='swiper1'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide" style="background-image:url('/images/home/banner2.png');"><a href="activity/newyear" target="_blank"></a></div>
                 <div class="swiper-slide" style="background-image:url('/images/home/banner1.jpg');"><a href="activity/investFriends" target="_blank"></a></div>
-                <!-- <div class="swiper-slide" style="background-image:url('/images/home/banner1.jpg');"></div> -->
             </div>
-            <!-- 分页器 -->
             <div class="swiper-pagination"></div>
-        </div>
+        </div> -->
+        <a href="activity/investFriends" target="_blank"><div class="swiper-slide" style="background-image:url('/images/home/banner1.jpg');"></div></a>
+
     </div>
     <div class="index-notice">
         <div>
@@ -61,22 +61,22 @@
                     <div class="cp-detail">
                         <div class="cp-icon"><img src="/images/home/jjd-icon.png" alt=""></div>
                         <div>
-                            <h1>金吉蛋</h1>
+                            <h1>{{products.gingerBaby.fullName}}</h1>
                             <p>小小金蛋  破壳赚钱</p>
                         </div>
                         <div>
-                            <h2>12.0<span>%+<span>3.0</span>%</span></h2>
+                            <h2>{{products.gingerBaby.rate}}<span>%+<span>{{products.gingerBaby.activityRate}}</span>%</span></h2>
                             <p>预期年化利率</p>
                         </div>
                         <div class="deadline">
-                            <h3>15天</h3>
+                            <h3>{{products.gingerBaby.deadline}}天</h3>
                             <p>投资期限</p>
                         </div>
                         <div>
-                            <h3>1000元</h3>
+                            <h3>{{products.gingerBaby.leastaAmount}}元</h3>
                             <p>起投金额</p>
                         </div>
-                        <div ui-sref="main.invest" class="button">了解详情</div>
+                        <div ui-sref="main.billDetail({id:products.gingerBaby.id})" class="button">立即投资</div>
                     </div>
                     <img class="jjd-label" src="/images/home/jjd-label.png" alt="">
                 </div>
@@ -92,62 +92,62 @@
                         <li>
                             <div class="cp-icon"><img src="/images/home/jbb-icon.png" alt=""></div>
                             <div>
-                                <h1>吉宝宝</h1>
+                                <h1>{{products.jiBaby.fullName}}</h1>
                                 <p>金吉利宝  收益饱饱</p>
                             </div>
                             <div>
-                                <h2>7.5<span>%+<span>2.0</span>%</span></h2>
+                                <h2>{{products.jiBaby.rate}}<span>%+<span>{{products.jiBaby.activityRate}}</span>%</span></h2>
                                 <p>预期年化利率</p>
                             </div>
                             <div class="deadline">
-                                <h3>35天</h3>
+                                <h3>{{products.jiBaby.deadline}}天</h3>
                                 <p>投资期限</p>
                             </div>
                             <div>
-                                <h3>100元</h3>
+                                <h3>{{products.jiBaby.leastaAmount}}元</h3>
                                 <p>起投金额</p>
                             </div>
-                            <div ui-sref="main.invest" class="button">了解详情</div>
+                            <div ui-sref="main.billDetail({id:products.jiBaby.id})" class="button">立即投资</div>
                         </li>
                         <li>
                             <div class="cp-icon"><img src="/images/home/jxb-icon.png" alt=""></div>
                             <div>
-                                <h1>吉祥宝</h1>
+                                <h1>{{products.propitiousBaby.fullName}}</h1>
                                 <p>吉祥如意  荷包满意</p>
                             </div>
                             <div>
-                                <h2>8.5<span>%+<span>2.0</span>%</span></h2>
+                                <h2>{{products.propitiousBaby.rate}}<span>%+<span>{{products.propitiousBaby.activityRate}}</span>%</span></h2>
                                 <p>预期年化利率</p>
                             </div>
                             <div class="deadline">
-                                <h3>70天</h3>
+                                <h3>{{products.propitiousBaby.deadline}}天</h3>
                                 <p>投资期限</p>
                             </div>
                             <div>
-                                <h3>100元</h3>
+                                <h3>{{products.propitiousBaby.leastaAmount}}元</h3>
                                 <p>起投金额</p>
                             </div>
-                            <div ui-sref="main.invest" class="button">了解详情</div>
+                            <div ui-sref="main.billDetail({id:products.propitiousBaby.id})" class="button">立即投资</div>
                         </li>
                         <li>
                             <div class="cp-icon"><img src="/images/home/jlb-icon.png" alt=""></div>
                             <div>
-                                <h1>吉利宝</h1>
+                                <h1>{{products.geelyBaby.fullName}}</h1>
                                 <p>金吉利宝  大吉大利</p>
                             </div>
                             <div>
-                                <h2>9.5<span>%+<span>2.0</span>%</span></h2>
+                                <h2>{{products.geelyBaby.rate}}<span>%+<span>{{products.geelyBaby.activityRate}}</span>%</span></h2>
                                 <p>预期年化利率</p>
                             </div>
                             <div class="deadline">
-                                <h3>120天</h3>
+                                <h3>{{products.geelyBaby.deadline}}天</h3>
                                 <p>投资期限</p>
                             </div>
                             <div>
-                                <h3>100元</h3>
+                                <h3>{{products.geelyBaby.leastaAmount}}元</h3>
                                 <p>起投金额</p>
                             </div>
-                            <div ui-sref="main.invest" class="button">了解详情</div>
+                            <div ui-sref="main.billDetail({id:products.geelyBaby.id})" class="button">立即投资</div>
                         </li>
                     </ul>
                 </div>
@@ -175,15 +175,11 @@
                 </div>
             </div>
             <div class="parter banxin">
-                <!-- <img src="/images/home/partner1.png" alt="" ng-click='wdzj' ui-sref="">
-                <img src="/images/home/partner-b.png" alt="">
-                <img src="/images/home/partner-c.png" alt="">
-                <img src="/images/home/partner-d.png" alt="">
-                <img src="/images/home/partner-e.png" alt="">
-                <img src="/images/home/partner2.png" alt=""> -->
 
                 <div class="swiper_container" id='swiper2'>
                     <div class="swiper-wrapper">
+
+                        <div class="swiper-slide wdzj" style="background-image:url('/images/home/hlwjrppgw.jpg');"><a href="http://si.trustutn.org/info?sn=134180306000631424059&certType=4"></a></div>
                         <div class="swiper-slide wdzj" style="background-image:url('/images/home/partner1.png');"><a href="https://www.wdzj.com"></a></div>
                         <div class="swiper-slide" style="background-image:url('/images/home/partner-b.png');"></div>
                         <div class="swiper-slide" style="background-image:url('/images/home/partner-c.png');"></div>

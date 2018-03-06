@@ -22,7 +22,7 @@ app.controller('loanProtocolCtrl', ['$rootScope','$scope','$filter','resourceSer
 			case "借款协议":
 				if (data.success) {
 					$scope.info = data.map;
-					$scope.list = $.parseJSON(data.map.result);
+                    $scope.objdata = data.map; 
 				} else {
 				}
 				break;

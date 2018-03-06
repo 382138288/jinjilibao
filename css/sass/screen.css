@@ -864,10 +864,6 @@ body {
   color: #666;
 }
 
-* {
-  font: 12px/1.5 "Microsoft Yahei", arial, tahoma, "Hiragino Sans GB", \5b8b\4f53;
-}
-
 .jswebqq {
   width: 93px;
   height: 151px;
@@ -13240,6 +13236,35 @@ body {
   height: 0px;
 }
 
+.fkpg {
+  width: 100%;
+}
+.fkpg dt {
+  width: 30%;
+  float: left;
+  text-align: center;
+}
+.fkpg dt span {
+  display: inline-block;
+  padding: 20px 10px;
+  width: 180px;
+  box-sizing: border-box;
+  font-size: 26px;
+  background: #F7F7F7;
+  color: #28C0FF;
+}
+.fkpg dd {
+  width: 70%;
+  float: left;
+}
+
+.bzzl {
+  width: 150px;
+  height: 200px;
+  margin: 0px 30px 30px 0px;
+  border: 1px solid #E7E7E7;
+}
+
 .storage-banner {
   background-position: 0 0;
   height: 134px;
@@ -13829,6 +13854,9 @@ body {
   padding: 0 20px;
   width: 80%;
 }
+.protocol-box b {
+  font-weight: bold;
+}
 .protocol-box .webapp-title {
   height: 3.40741rem;
   background: #FF4940;
@@ -13917,9 +13945,6 @@ body {
   width: auto;
   display: inline;
   padding: 0;
-}
-.protocol-box.loan-protocol {
-  background: url('../../src/images/protocolbg.png?1480313786') 128px 384px no-repeat;
 }
 .protocol-box.loan-protocol h1 {
   padding-bottom: 20px;

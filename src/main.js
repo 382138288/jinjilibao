@@ -721,6 +721,26 @@ app.service('httpService', function ($rootScope,$http, $filter,ngDialog,$localSt
 
 
 app.directive(
+    'pagination',
+    function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'directives/pagination/pagination.html',
+            replace: true,
+            // transclude: true,
+            // scope: true,
+            // controller: [
+            //     '$scope',
+            //     '$filter',
+            //     'resourceService',
+            //     function ($scope, $filter, resourceService) {
+
+            //     }]
+
+        };
+    }
+);
+app.directive(
         'menu',
         function() {
             var temp='<div class="side-mode" ng-class="{true: \'active-mode\', false: \'\'}[activeText == tool.memnTitle]" ng-repeat="tool in menuItems">'+
@@ -2873,26 +2893,6 @@ app
         })
 
 
-app.directive(
-    'pagination',
-    function () {
-        return {
-            restrict: 'E',
-            templateUrl: 'directives/pagination/pagination.html',
-            replace: true,
-            // transclude: true,
-            // scope: true,
-            // controller: [
-            //     '$scope',
-            //     '$filter',
-            //     'resourceService',
-            //     function ($scope, $filter, resourceService) {
-
-            //     }]
-
-        };
-    }
-);
 /*
     username注意
     grid = 表格数据
@@ -3090,95 +3090,6 @@ function resourceService(resource, http , $state, $rootScope, ngDialog, $filter,
 	};
 };
 
-app.controller('actareaController', [
-'$rootScope',
-'$scope',
-'$location',
-'$localStorage',
-'$filter',
-'httpService',
-'$state',
-'ngDialog',
-'storage',
-'Global',
-function(
-    $rootScope,
-    $scope,
-    $location,
-    $localStorage,
-    $filter,
-    httpService,
-    $state,
-    ngDialog,
-    storage,
-    Global
-) {
-	Global.pageTitel("活动专区");
-
-	$scope.isLogin = $filter('isRegister')().register;
-	$scope.showOn = true;
-	$scope.showCode = 'wechat';
-	$scope.oldNum = 0;
-	$scope.newNum = 0;
-	$scope.oldList = [];
-	$scope.newList = [];
-
-	$rootScope.activeNav = 'together';
-
-	// 监听退出是否成功
-	$rootScope.$on('exitSuccess', function(event, flag) {
-		if (flag) {
-			$scope.isLogin = false;
-		}
-	});
-
-	if($localStorage.user != undefined){
-		$scope.uid = $localStorage.user.uid;
-		httpService.queryPost($scope,$filter('交互接口对照表')('Home主数据'),{},function(data) {
-            $scope.user = data.map;
-            if (data.map.realName == '' || data.map.realName == undefined) {
-                $scope.user.userName = '亲爱的用户';
-            } else {
-                $scope.user.userName = data.map.realName;
-            }
-            $localStorage.user = $scope.user;
-        });
-	}
-
-    httpService.queryPost($scope,$filter('交互接口对照表')('活动聚合页列表'),{},function(data) {
-        if (data.success) {
-            $scope.list = data.map.pageInfo.rows;
-            var lengthlist = $scope.list.length;
-            for (var i = 0; i < lengthlist; i++) {
-                if ($scope.list[i].status == 1) {
-                    $scope.newNum ++;
-                    $scope.newList.push($scope.list[i]);
-                } else if ($scope.list[i].status == 2) {
-                    $scope.oldNum ++;
-                    $scope.oldList.push($scope.list[i]);
-                }
-            }
-            if ($scope.newList.length > 4) {
-                $scope.showNewBtn = true;
-            } else {
-                $scope.showNewBtn = false;
-            }
-            if ($scope.oldList.length > 4) {
-                $scope.showOldBtn = true;
-            } else {
-                $scope.showOldBtn = false;
-            }
-        }
-    });
-
-    $scope.showMore = function(str) {
-    	if (str == 'new') {
-    		$scope.showNewBtn = false;
-    	} else if (str == 'old') {
-    		$scope.showOldBtn = false;
-    	}
-    };
-}])
 /*lee 我的账户*/
 app.controller('accountHomeCtrl', ['$rootScope','$scope', '$state', '$localStorage', 'resourceService','$filter','ngDialog','$location',function($rootScope,$scope, $state, $localStorage,resourceService,$filter,ngDialog,$location) {
 	$filter('isLogin')($scope);
@@ -3401,6 +3312,95 @@ app.controller('myAccountCtrl', ['$rootScope','$scope','$location','$localStorag
 	// 	$scope.activeText = $scope.activeText = '我的账户';
 	// };
 }]);
+app.controller('actareaController', [
+'$rootScope',
+'$scope',
+'$location',
+'$localStorage',
+'$filter',
+'httpService',
+'$state',
+'ngDialog',
+'storage',
+'Global',
+function(
+    $rootScope,
+    $scope,
+    $location,
+    $localStorage,
+    $filter,
+    httpService,
+    $state,
+    ngDialog,
+    storage,
+    Global
+) {
+	Global.pageTitel("活动专区");
+
+	$scope.isLogin = $filter('isRegister')().register;
+	$scope.showOn = true;
+	$scope.showCode = 'wechat';
+	$scope.oldNum = 0;
+	$scope.newNum = 0;
+	$scope.oldList = [];
+	$scope.newList = [];
+
+	$rootScope.activeNav = 'together';
+
+	// 监听退出是否成功
+	$rootScope.$on('exitSuccess', function(event, flag) {
+		if (flag) {
+			$scope.isLogin = false;
+		}
+	});
+
+	if($localStorage.user != undefined){
+		$scope.uid = $localStorage.user.uid;
+		httpService.queryPost($scope,$filter('交互接口对照表')('Home主数据'),{},function(data) {
+            $scope.user = data.map;
+            if (data.map.realName == '' || data.map.realName == undefined) {
+                $scope.user.userName = '亲爱的用户';
+            } else {
+                $scope.user.userName = data.map.realName;
+            }
+            $localStorage.user = $scope.user;
+        });
+	}
+
+    httpService.queryPost($scope,$filter('交互接口对照表')('活动聚合页列表'),{},function(data) {
+        if (data.success) {
+            $scope.list = data.map.pageInfo.rows;
+            var lengthlist = $scope.list.length;
+            for (var i = 0; i < lengthlist; i++) {
+                if ($scope.list[i].status == 1) {
+                    $scope.newNum ++;
+                    $scope.newList.push($scope.list[i]);
+                } else if ($scope.list[i].status == 2) {
+                    $scope.oldNum ++;
+                    $scope.oldList.push($scope.list[i]);
+                }
+            }
+            if ($scope.newList.length > 4) {
+                $scope.showNewBtn = true;
+            } else {
+                $scope.showNewBtn = false;
+            }
+            if ($scope.oldList.length > 4) {
+                $scope.showOldBtn = true;
+            } else {
+                $scope.showOldBtn = false;
+            }
+        }
+    });
+
+    $scope.showMore = function(str) {
+    	if (str == 'new') {
+    		$scope.showNewBtn = false;
+    	} else if (str == 'old') {
+    		$scope.showOldBtn = false;
+    	}
+    };
+}])
 app.controller('InvestFriendsController', function ($scope, httpService, $filter, $localStorage,$state) {
     
 })  
@@ -3751,7 +3751,6 @@ app.controller('GszzController', function ($scope, httpService, $filter, $localS
     $scope.isShow = 1;
     $scope.show = function (num) {
         $scope.isShow = num;
-        console.log(num);
     }
 })  
 app.controller('MTBDController', function ($scope, httpService, $filter, $localStorage) {
@@ -3848,7 +3847,7 @@ app.controller('loanProtocolCtrl', ['$rootScope','$scope','$filter','resourceSer
 			case "借款协议":
 				if (data.success) {
 					$scope.info = data.map;
-					$scope.list = $.parseJSON(data.map.result);
+                    $scope.objdata = data.map; 
 				} else {
 				}
 				break;
