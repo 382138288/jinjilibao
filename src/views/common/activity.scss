@@ -1,0 +1,90 @@
+.common_activity {
+	.top {
+		height: 32px;
+		line-height: 32px;
+		background: #F7F7F7;
+		font-size: 12px;
+		color: #999999;
+	}
+	.tel{
+        float: left;
+    }
+	.top-nav{
+		float: right;
+		span{
+			margin: 0 -3px 0 12px;
+		}
+		a{
+			color: #999999;
+			&:hover{
+				color: #fb6262;
+			}
+		}
+		.appCode{
+			display: inline-block;
+			position: relative;
+			padding: 0 12px;
+			cursor: pointer;
+			div{
+				position: absolute;
+				top: 30px;
+				right: -1px;
+				width: 120px;
+				border:1px solid #f5f5f5;
+				border-top: none;
+				background: #fff;
+    			z-index: 99;
+    			text-align: center;
+				display: none;
+				img{
+					display: block;
+					margin: 12px auto 0;
+                    width: 108px;
+				}
+				p{
+					line-height:20px;
+					color: #8d8d8d;
+					padding: 5px 0;
+				}
+			}
+			&:hover{
+				text-decoration: none;
+				background:#fff;
+				i{
+					text-decoration: underline;
+				}
+				div{
+					display: block;
+				}
+			}
+		}
+	}
+	
+	// 底部
+	.footer {
+		height: 156px;
+		background-color:#333;
+		color: #fff;
+		font-size: 18px;
+		ul{
+			width: 417px;
+			margin: 0 auto;
+			padding: 36px 0;
+		}
+		p {
+			text-align: center;
+			span {
+				padding: 0 24px;
+			}
+		}
+		li {
+			float: left;
+			a {
+				color: #fff;
+			}
+			span {
+				padding: 0 15px;
+			}
+		}
+	}
+}

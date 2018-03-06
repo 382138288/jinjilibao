@@ -1,0 +1,32 @@
+<div class="gszz-wrapper">
+    <div class="license">
+        <div class="nav clearfix">
+            <ul>
+                <li ng-click='show(1)'>
+                    <a href="" ng-class="{'now':isShow == 1}">营业执照</a>
+                </li>
+                <li ng-click='show(2)'>
+                    <a href="" ng-class="{'now':isShow == 2}">验资报告</a>
+                </li>
+                <li ng-click='show(3)'>
+                    <a href="" ng-class="{'now':isShow == 3}">开户许可证</a>
+                </li>
+                <li ng-click='show(4)'>
+                    <a href="" ng-class="{'now':isShow == 4}">股份配比</a>
+                </li>   
+            </ul>
+        </div>
+        <div class="license_content" ng-if='isShow == 1'>
+            <img src="/images/gszz/license.png" alt="">
+        </div>
+        <div class="license_content" ng-if='isShow == 2'>
+            <img src="/images/gszz/vaildate.png" alt="">
+        </div>
+        <div class="license_content" ng-if='isShow == 3'>
+            <img src="/images/gszz/admission.png" alt="">
+        </div>
+        <div class="license_content" ng-if='isShow == 4'>
+            <img src="/images/gszz/stock.png" alt="">
+        </div>
+    </div>
+</div>

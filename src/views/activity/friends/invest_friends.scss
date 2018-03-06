@@ -1,0 +1,155 @@
+.activity_invest_friends {
+    background: url(/images/activity/invest_f_b.jpg) no-repeat center;
+    .container {
+        padding-top: 10px;
+        .logo {
+            height: 45px;
+            background: url(/images/activity/logo_invest_friends.png) no-repeat center;
+            a {
+                margin-left: 383px;
+                float: left;
+                width: 116px;
+                height: 44px;
+            }
+        }
+        .banner {
+            height: 527px;
+            background: url(/images/activity/banner_i_f.png) no-repeat center;
+        }
+        .content {
+            .c_title {
+                height: 30px;
+                margin-bottom: 20px;
+            }
+            // 自己获得
+            .c_title1 {
+                background: url(/images/activity/ct1_i_f.png) no-repeat center;
+            }
+            .receive_self {
+                margin: 0 auto;
+                width: 823px;
+                height: 270px;
+                background-color: #fff;
+                border-radius: 5px;
+                position: relative;
+            }
+            .self_left {
+                position: absolute;
+                left: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .self_right {
+                position: absolute;
+                right: 28px;
+                top: 50%;
+                transform: translateY(-50%);
+                p {
+                    font-size: 18px;
+                    color: #333;
+                }
+                p:first-child {
+                    color: #6c00ff;
+                    font-size: 26px;
+                    margin-bottom: 8px;
+                    span {
+                        font-size: 48px;
+                        font-weight: 700;
+                    }
+                }
+                p:nth-child(3) {
+                    font-size: 16px;
+                    color: #999;
+                    margin-top: 15px;
+                }
+                .accrul {
+                    img {
+                        vertical-align: middle;
+                    }
+                    p {
+                        font-size: 16px;
+                        line-height: 58px;
+                        vertical-align: middle;
+                        margin-top: 10px;
+                        span {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+            // 好友获得
+            .c_title2 {
+                margin-top: 43px;
+                background: url(/images/activity/ct2_i_f.png) no-repeat center;
+            }
+            .receive_friends {
+                width: 824px;
+                margin: 0 auto;
+                .cash,
+                .ewm {
+                    width: 381px;
+                    height: 303px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    text-align: center;
+                    img{
+                    }
+                }
+                .cash {
+                   img {
+                       margin-top: -64px;
+                       margin-left: 55px;
+                   }
+                   p:first-of-type {
+                       margin-top: -100px;
+                       font-size: 18px;
+                       color: #333;
+                   }
+                   p:nth-of-type(2) {
+                        font-size: 35px;
+                        color: #ff4141;
+                        font-family: serif;
+                        font-weight: 700;
+
+                   }
+                }
+                .ewm {
+                    img {
+                        margin-top: 28px;
+                    }
+                    h3 {
+                        font-weight: normal;
+                        font-size: 18px;
+                        height: 50px;
+                        line-height: 50px;
+                    }
+                    p {
+                        margin-top: 13px;
+                        font-size: 20px;
+                        color: #ff4f69;
+                    }
+                }
+            }
+        }
+
+        // 规则
+        .rules {
+            width: 830px;
+            margin: 0 auto;
+            margin-top: 55px;
+            padding-bottom: 100px;
+            color: #fff;
+            .rules_title {
+                font-size: 22px;
+            }
+            p {
+                line-height: 30px;
+                font-size: 16px;
+            }
+            p:last-child {
+                margin-top: 27px;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.wzgg_wrapper {
+  width: 940px;
+}
+.wzgg_wrapper .banner {
+  height: 210px;
+  background: url("/images/wzgg/cooperate_banner.png");
+}
+.wzgg_wrapper .content {
+  padding: 0 42px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.wzgg_wrapper .content li {
+  height: 67px;
+  line-height: 67px;
+  border-bottom: 1px solid #eee;
+}
+.wzgg_wrapper .content li a {
+  color: #333;
+  font-size: 16px;
+}
+.wzgg_wrapper .pages {
+  height: 142px;
+  width: 100%;
+  position: relative;
+  padding-top: 37px;
+}

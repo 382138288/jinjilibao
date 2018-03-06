@@ -1,0 +1,58 @@
+<div class="totalcal-dialog-wrapper">
+	<a href="" class="close home-calclose" ng-click="closeDialog()"></a>
+	<div class="title">理财计算器</div>
+	<div class="inner">
+		<span ng-if="showError" class="error-msg">{{errorMsg}}</span>
+		<div class="drop">
+			<p>投资金额</p>
+			<div class="box numbox"><input ng-model="calInvestNum" placeholder="请输入投资金额" id="calInvestNum" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'')" maxlength="10"><span>元</span></div>
+		</div>
+		<div class="drop">
+			<p>投资期限</p>
+			<div class="box dropbox deadlinebox" ng-click="showDeadlineUl = !showDeadlineUl">
+				<b ng-if="chooseDeadline == ''">请选择</b><b ng-if="chooseDeadline == 35">35天</b><b ng-if="chooseDeadline == 60">60天</b><b ng-if="chooseDeadline == 90">90天</b><b ng-if="chooseDeadline == 150">150天</b><b ng-if="chooseDeadline == 180">180天</b>
+				<span class="home-calup" ng-if="showDeadlineUl"></span>
+				<span class="home-caldown" ng-if="!showDeadlineUl"></span>
+				<ul ng-if="showDeadlineUl" style="z-index: 11;">
+					<li ng-click="changeDeadline(35)">35天</li>
+					<li ng-click="changeDeadline(60)">60天</li>
+					<li ng-click="changeDeadline(90)">90天</li>
+					<li ng-click="changeDeadline(150)">150天</li>
+					<li ng-click="changeDeadline(180)">180天</li>
+				</ul>
+			</div>
+		</div>
+		<div class="drop">
+			<p>还款方式</p>
+			<div class="box dropbox" ng-click="showTypeUl = !showTypeUl">
+				<b ng-if="chooseType == ''">请选择</b><b ng-if="chooseType == 'a'">到期一次还本付息</b><b ng-if="chooseType == 'b'">等本等息</b>
+				<span class="semstorage-up" ng-if="showTypeUl"></span>
+				<span class="semstorage-down" ng-if="!showTypeUl"></span>
+				<ul ng-show="showTypeUl">
+					<li ng-click="chooseType='a'">到期一次还本付息</li>
+					<!-- <li ng-click="chooseType='b'">等本等息</li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="drop">
+			<p>年化收益</p>
+			<div class="box"><b>{{chooseRate}}</b><span>%</span></div>
+		</div>
+		<div class="btns">
+			<a href="" class="btn" ng-click="calNow()">计 算</a>
+			<a href="" class="reset" ng-click="storageReset()">重 置</a>
+		</div>
+		<div class="bot">
+			<div class="total">
+				<p>本息总计</p>
+				<div ng-if="!showResult"><i>0.00</i>元</div>
+				<div ng-if="showResult"><i>{{calInvestNum*1 + (calInvestNum*chooseRate*chooseDeadline/360/100) | isNumber2}}</i>元</div>
+			</div>
+			<div class="total get">
+				<p>应收利息</p>
+				<div ng-if="!showResult"><i>0.00</i>元</div>
+				<div ng-if="showResult"><i>{{calInvestNum*chooseRate*chooseDeadline/360/100 | isNumber2}}</i>元</div>
+			</div>
+		</div>
+	</div>
+</div>

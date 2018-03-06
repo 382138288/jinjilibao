@@ -1,0 +1,102 @@
+<div class="common-main">
+    <!-- 欢迎栏 -->
+    <div class="common-main-top">
+        <div class="content">
+            <p class="tel">客服热线：{{global.company.hotline}}</p>
+            <div class="top-nav">
+                <span style="margin-right: 12px;">|</span>
+                <a ui-sref="main.help.dlzc" target="_blank">帮助中心</a>
+                <span>|</span>
+                <div class="appCode">
+                    <a>下载APP</a>
+                    <div>
+                        <img src="/images/common/ewm_m_h.png">
+                        <p>手机客户端<br>APP下载</p>
+                    </div>
+                </div>
+                <span style="margin-left: -4px;">|</span>
+                <div class="appCode">
+                    <a>关注我们</a>
+                    <div>
+                        <img src="/images/common/wechat-code.png">
+                        <p>扫一扫<br>关注官方微信</p>
+                    </div>
+                </div>
+                <a ng-if="user" ui-sref="main.myAccount.accountHome">我的账户</a> <i ng-if="user">,</i> 
+                <a ng-if="user" style="cursor: pointer" ng-click="logout()">退出登录</a>
+                <a ng-if="!user" href="login">登录</a> <i ng-if="!user">/</i> 
+                <a ng-if="!user" href="register">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航 -->
+    <div class="common-main-nav">
+        <div class="content">
+            <div ui-sref="main.home" class="logo-wrap">
+                <img src="/images/common/logo.png">
+            </div>
+            <div class="nav-box">
+                <ul>
+                    <li>
+                        <a ui-sref="main.home" ui-sref-active="active">首页</a>
+                    </li>
+                    <li>
+                        <a ui-sref="main.invest" ui-sref-active="active">理财</a>
+                    </li>
+                    <li>
+                        <a ui-sref="main.aqbz" ui-sref-active="active">安全保障</a>
+                    </li>
+                    <li>
+                        <a ui-sref="main.more.gywm" ng-class="{'active':state.current.name.indexOf('main.more') != -1}">信息披露</a>
+                    </li>
+                    <li>
+                        <a ui-sref="main.actarea" ui-sref-active="active">活动专区</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中间容器 -->
+    <div ui-view=""></div>
+
+    <!-- 底部 -->
+    <div class="common-main-footer">
+        <div class="content">
+            <div class="detail-box">
+                <div class="left">
+                    <h3>关于我们</h3>
+                    <p ui-sref="main.more.gywm">平台实力</p>
+                    <p ui-sref="main.more.gszz">公司资质</p>
+                    <p ui-sref="main.more.lxwm">联系我们</p>
+                    <p ui-sref="main.help.dlzc">常见问题</p>
+                </div>
+                <div class="left">
+                    <h3>新闻资讯</h3>
+                    <p ui-sref="main.more.wzgg">网站公告</p>
+                    <p ui-sref="main.more.mtbd">媒体报道</p>
+                </div>
+                <div class="left">
+                    <h3>客服热线</h3>
+                    <h1>{{global.company.hotline}}</h1>
+                </div>
+
+                <div class="right">
+                    <img src="/images/common/wechat-code.png" alt="">
+                    <p>{{global.company.name}}公众号</p>
+                </div>
+                <div class="right">
+                    <img src="/images/common/ewm_m_h.png" alt="">
+                    <p>下载{{global.company.name}}APP</p>
+                </div>
+            </div>
+            
+            <footer>
+                <p>{{global.company.date}}  {{global.company.titleLong}}版权所有 | 投资有风险，理财需谨慎</p>
+                <p>备案号：{{global.company.ICP}}</p>
+            </footer>
+        </div>
+    </div>
+
+</div>

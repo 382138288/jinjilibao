@@ -1,0 +1,14 @@
+<div class="openaccount-dialog-wrapper">
+	<i class="storage-bigclose" ng-click="closeDialog(showSuccess)"></i>
+	<div ng-if="!showSuccess">
+		<div class="title"><b class="storage-error"></b>开户失败</div>
+		<div class="info" ng-if="errorMsg==undefined || errorMsg==''">开户遇到问题，请核对您填写的信息是否正确！</div>
+		<div class="info" ng-if="errorMsg!=undefined && errorMsg!=''">{{errorMsg}}</div>
+		<a href="" class="again" ng-click="closeDialog()">重新开户</a>
+	</div>
+	<div ng-if="showSuccess">
+		<div class="title"><b class="storage-success"></b>开户成功</div>
+		<div class="info">您已成功开通银行资金账户，快去充值投资赚收益吧！</div>
+		<div class="bot"><a href="" class="keep" ng-click="closeDialog(showSuccess)">暂不充值</a><a href="/main/myAccount/accountRecharge" class="recharge" ng-click="closeDialog()">充值</a></div>
+	</div>
+</div>

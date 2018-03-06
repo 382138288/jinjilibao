@@ -1,0 +1,13 @@
+<div class="more-wzgg">
+    <img src="/images/more/wzgg-banner.png" alt="" class="banner">
+    <div class="wzgg-container">
+        <ul>
+            <li ng-repeat="item in ggList">
+                <a ui-sref="main.more.ggxq({newId:item.artiId})">{{item.title}}</a>
+                <span>{{item.createTime | date:"yyyy-MM-dd"}}</span>
+            </li>
+        </ul>
+
+        <pagination></pagination>
+    </div>
+</div>

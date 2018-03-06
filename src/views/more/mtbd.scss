@@ -1,0 +1,21 @@
+.mtbd_wrapper {
+    width: 940px;
+    .banner {
+        height: 210px;
+        background: url('/images/wzgg/cooperate_banner.png');
+    }
+    .content {
+        padding: 0 42px;
+        width: 100%;
+        box-sizing: border-box;
+        li {
+            height: 67px;
+            line-height: 67px;
+            border-bottom: 1px solid #eee;
+            a {
+                color: #333;
+                font-size: 16px;
+            }
+        }
+    }
+}

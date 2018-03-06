@@ -1,0 +1,70 @@
+@keyframes xialaxuanzhuan1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes xialaxuanzhuan2 {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.dlzc_wrapper {
+  padding-left: 33px;
+}
+.dlzc_wrapper li {
+  border-bottom: 1px solid #eee;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+.dlzc_wrapper li:first-of-type .answer {
+  display: block;
+}
+.dlzc_wrapper li:last-of-type {
+  border: none;
+}
+.dlzc_wrapper li header {
+  position: relative;
+}
+.dlzc_wrapper li header a {
+  height: 67px;
+  line-height: 67px;
+  color: #333;
+  font-size: 16px;
+}
+.dlzc_wrapper li header a i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+}
+.dlzc_wrapper li header a i.init {
+  transform: rotate(-180deg);
+}
+.dlzc_wrapper li header a i.animation1 {
+  animation: xialaxuanzhuan1 0.5s forwards;
+}
+.dlzc_wrapper li header a i.animation2 {
+  animation: xialaxuanzhuan2 0.5s forwards;
+}
+.dlzc_wrapper li .answer {
+  display: none;
+  font-size: 14px;
+  color: #666;
+  padding-bottom: 16px;
+}
+.dlzc_wrapper li .answer p:nth-child(2) {
+  line-height: 22px;
+  padding-left: 29px;
+}
+.dlzc_wrapper li.active header a {
+  font-weight: bold;
+}
+.dlzc_wrapper li.active header a i {
+  color: #ffdb37;
+}

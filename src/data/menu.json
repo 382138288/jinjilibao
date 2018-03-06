@@ -1,0 +1,53 @@
+{"result":[
+    {
+        "memnTitle": "我的账户",
+        "url":"main.myAccount.accountHome"
+    },{
+        "memnTitle": "我的资产",
+        "children": [
+        {
+            "memnTitle": "我的投资",
+            "url":"main.myAccount.accountMyInvest"
+        },{
+            "memnTitle": "资产记录",
+            "url":"main.myAccount.accountMyAssets"
+        }]
+    },{
+    	"memnTitle": "资金管理",
+        "children": [
+        {
+            "memnTitle": "充值",
+            "url":"main.myAccount.accountRecharge"
+        },{
+            "memnTitle": "提现",
+            "url":"main.myAccount.accountWithdraw"
+        }]
+    },{
+    	"memnTitle": "账户管理",
+        "children": [
+        {
+            "memnTitle": "个人中心",
+            "url":"main.myAccount.accountPerson"
+        },{
+            "memnTitle": "安全认证",
+            "url":"main.myAccount.accountSecurity"
+        }]
+    },{
+    	"memnTitle": "我的福利",
+        "children": [
+        {
+            "memnTitle": "我的优惠券",
+            "url":"main.myAccount.accountMyCouPon"
+        }]
+    },{
+    	"memnTitle": "我的邀请",
+        "url":"main.myAccount.accountMyFriend"
+    },{
+    	"memnTitle": "消息中心",
+        "children": [
+        {
+            "memnTitle": "我的消息",
+            "url":"main.myAccount.accountMyMsg"
+        }]
+    }
+]}

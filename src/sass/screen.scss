@@ -1,0 +1,39 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+// @import "compass/layout";
+// @import "menu/btns";
+
+@import "compass/CSS3";
+@import "compass/typography/lists";
+@import "compass/utilities/sprites";
+@import "compass/utilities/general/clearfix";
+
+@import "datepicker-bootstrap";
+
+$globalColor: #FF4940;
+
+@import "common";
+@import "global";
+
+// 首页样式
+// @import "newhome";
+@import "../views/home/home";
+@import "../views/account/account";
+@import "../views/account/redbag";
+@import "../views/account/accountMgmt/accountStorage";
+@import "../views/actarea/actarea";
+@import "../views/login_page/login";
+// @import "../views/invest/invest_List/invest";
+@import "../views/invest/invest_Detail/billnew";
+@import "../views/invest/storage";
+@import "../views/protocol_pages/protocol";
+
+
+
+.menu{
+	@include border-radius(1px);
+}

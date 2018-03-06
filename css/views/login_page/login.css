@@ -1,0 +1,685 @@
+@charset "UTF-8";
+.loginpage {
+  width: 100%;
+  height: 101px;
+  position: relative;
+  background: #fff;
+}
+.loginpage .bot {
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  background: #FFDB37;
+  border-top: 1px solid #ffbfa0;
+  border-bottom: 1px solid #feb693;
+  display: block;
+  position: absolute;
+}
+.loginpage .top-content-wrapper {
+  display: none;
+}
+.loginpage .header-wrap .logo-wrap {
+  padding-top: 17px;
+}
+.loginpage .header-wrap .nav-box {
+  display: none;
+}
+.loginpage .header-wrap .feature-list {
+  padding: 21px 0 0 56px;
+  float: left;
+  width: auto;
+  display: block;
+}
+.loginpage .header-wrap .feature-list ul li {
+  white-space: normal;
+  width: 192px;
+}
+.loginpage .header-wrap .feature-list ul li i {
+  width: 60px;
+  height: 60px;
+}
+.loginpage .header-wrap .feature-list ul li div {
+  padding-left: 66px;
+}
+.loginpage .header-wrap .feature-list ul li div span {
+  font-size: 16px;
+}
+
+.quick-register-wrap {
+  margin: 0 auto;
+  min-height: 576px;
+  background: url('../../../src/images/loginbg.png') no-repeat center top;
+  	/* .wqq-quick-register-wrap{
+  		width:1200px;
+  		height:1000px;
+  		margin:0 auto;
+  		position:relative;
+      } */
+  /* 登录的背景暂时和背景色合并 */
+}
+.quick-register-wrap.quick-register-wrap-old {
+  background: #F3FBFF url('../../../src/images/invitelinkbg.png') no-repeat center top;
+}
+.quick-register-wrap.invite-register-wrap {
+  background: url('../../../src/images/invitelinkbg.png') no-repeat center top;
+}
+.quick-register-wrap.register-register-wrap {
+  background: url('../../../src/images/loginbgb.png?1499406988') no-repeat center top;
+}
+.quick-register-wrap .common-form-ok {
+  top: 13px;
+  left: 334px;
+}
+.quick-register-wrap .error {
+  position: absolute;
+  top: 41px;
+  left: 19px;
+}
+.quick-register-wrap i.register-banner2 {
+  width: 728px;
+  height: 561px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  background: url('../../../src/images/register-bannernew.png?1495618960');
+}
+.quick-register-wrap .quick-register-wrapper {
+  padding: 20px 0 20px;
+  float: right;
+}
+.quick-register-wrap .quick-register-mod {
+  width: 388px;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  background: #fff;
+}
+.quick-register-wrap .quick-register-mod .title {
+  height: 37px;
+  padding-top: 47px;
+}
+.quick-register-wrap .quick-register-mod .title .throung {
+  width: 100%;
+  height: 1px;
+  background: #dedede;
+}
+.quick-register-wrap .quick-register-mod .title .p-box {
+  width: 109px;
+  height: auto;
+  background: #fff;
+  margin-left: 26px;
+  margin-top: -20px;
+}
+.quick-register-wrap .quick-register-mod .title .p-box p {
+  display: block;
+  font-size: 22px;
+  color: #FFDB37;
+  text-align: center;
+}
+.quick-register-wrap .quick-register-mod .quick-register-box {
+  margin: 0 30px;
+  padding-top: 20px;
+}
+.quick-register-wrap .quick-login-mod {
+  width: 421px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  margin-top: 45px;
+}
+.quick-register-wrap .quick-login-mod .title {
+  height: 46px;
+  padding-top: 35px;
+  padding-bottom: 21px;
+}
+.quick-register-wrap .quick-login-mod .title .throung {
+  width: 100%;
+  height: 1px;
+  background: #dedede;
+}
+.quick-register-wrap .quick-login-mod .title .p-box {
+  width: 109px;
+  height: auto;
+  background: #fff;
+  margin-left: 26px;
+  margin-top: -20px;
+}
+.quick-register-wrap .quick-login-mod .title .p-box p {
+  display: block;
+  font-size: 22px;
+  color: #FFDB37;
+  text-align: center;
+}
+.quick-register-wrap .quick-login-mod .quick-register-box {
+  padding: 0 50px 0 51px;
+}
+.quick-register-wrap .quick-login-mod .quick-register-box .text {
+  width: 298px !important;
+}
+.quick-register-wrap .quick-login-mod .quick-register-box .text.small-text {
+  width: 192px !important;
+}
+.quick-register-wrap .quick-login-mod .sub-box .sub-btn {
+  width: 320px !important;
+}
+.quick-register-wrap .quick-register-box .title {
+  height: 46px;
+  border-bottom: 1px solid #eaeaea;
+  padding-top: 20px;
+}
+.quick-register-wrap .quick-register-box .title p {
+  font-size: 22px;
+  color: #45abf9;
+}
+.quick-register-wrap .quick-register-box .input-box {
+  padding-bottom: 24px;
+  position: relative;
+}
+.quick-register-wrap .quick-register-box .input-box.voice-box {
+  padding-bottom: 10px;
+  margin-top: -10px;
+}
+.quick-register-wrap .quick-register-box .input-box.voice-box .error {
+  position: relative;
+  vertical-align: top;
+  margin-right: -28px !important;
+  top: inherit;
+  left: inherit;
+  padding-left: 16px;
+  background-position: 1px 2px;
+}
+.quick-register-wrap .quick-register-box .input-box .common-form-error,
+.quick-register-wrap .quick-register-box .input-box .common-form-ok,
+.quick-register-wrap .quick-register-box .input-box i {
+  position: absolute;
+  top: 43px;
+  left: 0;
+  margin: 0;
+}
+.quick-register-wrap .quick-register-box .input-box.recommend-box .common-form-error {
+  top: 64px;
+}
+.quick-register-wrap .quick-register-box .input-box.recommend-box .error {
+  top: 62px;
+}
+.quick-register-wrap .quick-register-box .input-box .text {
+  border-radius: 2px;
+  width: 306px;
+  height: 24px;
+  line-height: 24px;
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #666;
+}
+.quick-register-wrap .quick-register-box .input-box .text.small-text {
+  width: 200px;
+  border-radius: 2px 0  0 2px;
+}
+.quick-register-wrap .quick-register-box .input-box.passwd-box i.login-icons-eye, .quick-register-wrap .quick-register-box .input-box.passwd-box i.login-icons-eyehide {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+  cursor: pointer;
+  height: 22px;
+  width: 26px;
+  margin: 0;
+  left: auto;
+}
+.quick-register-wrap .quick-register-box .input-box .get-code {
+  float: right;
+  width: 106px;
+  height: 40px;
+  background: #5db9f2;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+.quick-register-wrap .quick-register-box .input-box .get-code:hover {
+  background: #2ea5ee;
+  text-decoration: none;
+}
+.quick-register-wrap .quick-register-box .input-box .get-code.nouse-btn {
+  background: #9f9f9f;
+  cursor: default;
+}
+.quick-register-wrap .quick-register-box .input-box .img-box {
+  float: right;
+}
+.quick-register-wrap .quick-register-box .input-box .img-box img {
+  width: 106px;
+  height: 40px;
+}
+.quick-register-wrap .quick-register-box .input-box .show-mod {
+  position: relative;
+  margin-bottom: 3px;
+}
+.quick-register-wrap .quick-register-box .input-box .show-mod a {
+  color: #87bef6;
+}
+.quick-register-wrap .quick-register-box .input-box .show-mod a i {
+  float: left;
+  margin: 3px 1px 0 0;
+  height: 11px;
+  position: static;
+}
+.quick-register-wrap .quick-register-box .input-box .show-mod a i.login-icons-rotriangle {
+  margin-top: 6px;
+  height: 6px;
+}
+.quick-register-wrap .quick-register-box .sub-box .sub-btn {
+  display: block;
+  width: 328px;
+  height: 40px;
+  line-height: 38px;
+  background: #45abf9;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+}
+.quick-register-wrap .quick-register-box .sub-box .sub-btn:hover {
+  background: #6cbdfb;
+}
+.quick-register-wrap .quick-register-box .agreement-box {
+  padding: 10px 0 32px 2px;
+}
+.quick-register-wrap .quick-register-box .agreement-box label {
+  color: #acacac;
+  display: block;
+  padding-bottom: 8px;
+}
+.quick-register-wrap .quick-register-box .agreement-box label .check-box {
+  margin: 3px 5px 0 0;
+  margin-top: -1px \9;
+  vertical-align: top;
+}
+.quick-register-wrap .quick-register-box .agreement-box .server-agreement {
+  color: #3a97de;
+}
+.quick-register-wrap .quick-register-box .agreement-box .forget {
+  font-size: 14px;
+  padding-top: 2px;
+}
+.quick-register-wrap .quick-register-box .agreement-box .forget .choose-box {
+  color: #acacac;
+  margin-top: 11px;
+  margin-right: 5px;
+  float: left;
+  padding-right: 5px;
+  border-right: 2px solid #acacac;
+}
+.quick-register-wrap .quick-register-box .agreement-box .forget .choose-box .change-btn {
+  color: #004EFF;
+}
+.quick-register-wrap .quick-register-box .agreement-box .reset-passwd {
+  color: #004EFF;
+  display: block;
+  padding-top: 10px;
+}
+.quick-register-wrap .common-storage-tip {
+  margin-left: -19px;
+  width: 370px;
+  height: 40px;
+  padding-top: 18px;
+}
+
+.success-wrap .tips-wrap {
+  padding: 0 0 30px 135px;
+  position: relative;
+}
+.success-wrap .tips-wrap i {
+  position: absolute;
+  left: 64px;
+  top: 0;
+}
+.success-wrap .tips-wrap b {
+  font-size: 24px;
+  display: block;
+  height: 51px;
+  line-height: 51px;
+  color: #555;
+}
+.success-wrap .tips-wrap p {
+  color: #999;
+}
+.success-wrap .tips-wrap p.tip {
+  font-size: 14px;
+  color: #ff7373;
+  padding-top: 15px;
+}
+
+.tradepasswd-wrapper {
+  background: #b8e3fe;
+  overflow: hidden;
+}
+
+.tradepasswd-wrap {
+  width: 912px;
+  margin: 30px auto 43px;
+  min-height: 400px;
+  background: #fff;
+  position: relative;
+}
+.tradepasswd-wrap .realname-wrap, .tradepasswd-wrap .tradepasswd {
+  padding-top: 18px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+.tradepasswd-wrap .shadow {
+  width: 1120px;
+  height: 690px;
+  background: url('../../../src/images/setpasswd-shadow.png');
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.tradepasswd-wrap .setp-icon {
+  margin: 0 auto 1px;
+}
+.tradepasswd-wrap .wqq-new-tishitext {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+}
+.tradepasswd-wrap .form-box {
+  padding-left: 172px;
+  min-height: 235px;
+}
+.tradepasswd-wrap .skip-wrap {
+  padding: 16px 28px 12px;
+  font-size: 14px;
+  text-align: right;
+}
+.tradepasswd-wrap .skip-wrap a {
+  color: #17a9ef;
+}
+.tradepasswd-wrap .skip-wrap span {
+  color: #dedede;
+  font-family: '宋体';
+  margin: 0 10px;
+}
+.tradepasswd-wrap .input-box {
+  padding-bottom: 16px;
+}
+.tradepasswd-wrap .input-box.voice-box {
+  padding-left: 152px;
+}
+.tradepasswd-wrap .input-box.voice-box .error {
+  display: none;
+}
+.tradepasswd-wrap .input-box p {
+  width: 140px;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  font-size: 16px;
+  color: #555;
+}
+.tradepasswd-wrap .input-box.banknum-box {
+  position: relative;
+}
+.tradepasswd-wrap .input-box.banknum-box .bank-tip {
+  position: absolute;
+  top: 10px;
+  left: 434px;
+  color: #ea3030;
+}
+.tradepasswd-wrap .input-box .input-mod {
+  float: left;
+  margin-left: 12px;
+}
+.tradepasswd-wrap .input-box .input-mod .text {
+  width: 248px;
+  height: 24px;
+  line-height: 24px;
+  padding: 7px 10px;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  color: #555;
+}
+.tradepasswd-wrap .input-box .input-mod .text.phonecode {
+  width: 134px;
+  float: left;
+}
+.tradepasswd-wrap .input-box .input-mod .getphonecode {
+  float: left;
+  width: 104px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 10px;
+  position: static;
+  background: #5db9f2;
+}
+.tradepasswd-wrap .input-box .input-mod .getphonecode:hover {
+  background: #2ea5ee;
+  text-decoration: none;
+}
+.tradepasswd-wrap .input-box .input-mod .getphonecode.getcode-disabled {
+  background: #bbb;
+  color: #ededed;
+  cursor: default;
+}
+.tradepasswd-wrap .input-box .input-mod .getphonecode.getcode-disabled:hover {
+  background: #bbb;
+  cursor: default;
+}
+.tradepasswd-wrap .input-box .input-mod .phonecodemsg {
+  float: left;
+  line-height: 40px;
+  margin-left: 3px;
+}
+.tradepasswd-wrap .sub-box {
+  padding-left: 152px;
+}
+.tradepasswd-wrap .sub-box .sub-btn {
+  width: 202px;
+  height: 39px;
+  line-height: 38px;
+  text-align: center;
+  background: #FFDB37;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+.tradepasswd-wrap .sub-box .sub-btn:hover {
+  background: #1787ce;
+}
+.tradepasswd-wrap .sub-box .sub-btn.bind-card {
+  background: #ff7373;
+  margin-top: -10px;
+}
+.tradepasswd-wrap .sub-box .sub-btn.bind-card:hover {
+  background: #ff5a5a;
+  text-decoration: none;
+}
+.tradepasswd-wrap .sub-box .sub-btn[disabled="disabled"] {
+  border: none;
+  background: #717171;
+  cursor: default;
+  color: #fff !important;
+}
+.tradepasswd-wrap .bot-tips {
+  padding: 8px 0 0 152px;
+  color: #ea3030;
+}
+
+.reset-passwd .reset-title {
+  font-size: 24px;
+  color: #666;
+  line-height: 64px;
+  border-bottom: 3px solid #e4e4e4;
+}
+
+.reset-passwd .reset-box {
+  padding: 85px 0 0 355px;
+  overflow: hidden;
+}
+
+.reset-passwd .input-box {
+  position: relative;
+  height: 43px;
+  clear: both;
+  zoom: 1;
+}
+.reset-passwd .input-box .msg-box {
+  position: absolute;
+  top: 67px;
+}
+.reset-passwd .input-box.voice-box {
+  padding-left: 126px;
+}
+.reset-passwd .input-box.voice-box .error {
+  vertical-align: top;
+}
+
+.reset-passwd .input-box p {
+  width: 115px;
+  line-height: 42px;
+  font-size: 16px;
+  color: #575757;
+  margin-right: 10px;
+  float: left;
+  text-align: right;
+}
+
+.reset-passwd .input-box .input-mod {
+  float: left;
+  /*height: 74px\9;*/
+}
+
+.reset-passwd .input-box div.myplaceholder {
+  /*height: 74px\9 !important;*/
+}
+
+.reset-passwd .input-mod .text {
+  width: 468px;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #666;
+  display: block;
+  margin-bottom: 33px;
+  padding-left: 10px;
+}
+
+.reset-passwd .input-mod .text1 {
+  width: 326px;
+  height: 60px;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #666;
+  display: block;
+  margin-bottom: 33px;
+  margin-right: 9px;
+  padding-left: 10px;
+}
+
+.reset-passwd .input-box .get-btn {
+  position: absolute;
+  top: 0;
+  left: 346px;
+  border-radius: 5px;
+  color: #FFDB37;
+  font-size: 16px;
+  width: 133px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #FFDB37;
+}
+
+.reset-passwd .input-box .get-btn:hover {
+  text-decoration: none;
+  color: #FFDB37;
+}
+
+.reset-passwd .sub-box {
+  text-align: center;
+  padding: 0 0 70px 355px;
+}
+
+.reset-passwd .sub-box .sub-btn,
+.reset-complete .sure-btn {
+  width: 480px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.reset-passwd .sub-box .sub-btn:hover,
+.reset-complete .sure-btn:hover {
+  background: #ffa800;
+  text-decoration: none;
+}
+
+.reset-passwd .sub-box .sub {
+  background: #f0f0f0 !important;
+  border: 1px solid #DEDEDE;
+  color: #ccc !important;
+}
+
+.jindutiao-box {
+  width: 1198px;
+  height: 153px;
+  background: url('../../../src/images/forgetpassone.png?1480313792');
+}
+
+.resetpasswd-wrapper {
+  padding: 30px 0 43px;
+  width: 100%;
+  background: #f4f4f4;
+}
+.resetpasswd-wrapper .reset-passwd .lijidl {
+  width: 480px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+  cursor: pointer;
+}
+.resetpasswd-wrapper .resetpasswd-wrap {
+  width: 1200px;
+  background: #fff;
+  margin: 0 auto;
+  border: 1px solid #E4E4E4;
+}
+.resetpasswd-wrapper .success-wrap {
+  padding: 120px 0 0 0;
+}
+.resetpasswd-wrapper .success-wrap p.tip {
+  font-size: 14px;
+  color: #555;
+  padding: 7px 0 0 72px;
+}
+.resetpasswd-wrapper .success-wrap .return {
+  padding: 44px 0 30px 180px;
+}
+.resetpasswd-wrapper .success-wrap .return a {
+  font-size: 14px;
+  color: #47abff;
+}
+.resetpasswd-wrapper .success-wrap .return span {
+  color: #c7c7c7;
+  margin: 0 11px;
+  font-family: "宋体";
+}

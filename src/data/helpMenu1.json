@@ -1,0 +1,35 @@
+{"result":[
+    {
+        "memnTitle": "走进金吉利宝",
+        "name": "JSGK",
+        "url":"main.jt.JSGK"
+    },{
+        "memnTitle": "历程回顾",
+        "name": "LCHG",
+        "url":"main.jt.LCHG"
+    },{
+        "memnTitle": "管理团队",
+        "name": "GLTD",
+        "url":"main.jt.GLTD"
+    },{
+        "memnTitle": "公司资质",
+        "name": "GSZZ",
+        "url":"main.jt.GSZZ"
+    },{
+        "memnTitle": "多重保障",
+        "name": "YYYZ",
+        "url":"main.jt.YYYZ"
+    },{
+        "memnTitle": "媒体报道",
+        "name": "GSDT",
+        "url":"main.jt.GSDT"
+    },{
+        "memnTitle": "网站公告",
+        "name": "GSGG",
+        "url":"main.jt.GSGG"
+    },{
+        "memnTitle": "联系我们",
+        "name": "LXWM",
+        "url":"main.jt.LXWM"
+    }
+]}

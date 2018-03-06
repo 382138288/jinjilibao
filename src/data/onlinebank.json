@@ -1,0 +1,17 @@
+"onlineBankList":[
+	{"bankCode":"0801020000","bankName":"中国工商银行","id":"1"},
+	{"bankCode":"0801030000","bankName":"中国农业银行","id":"2"},
+	{"bankCode":"0801050000","bankName":"中国建设银行","id":"3"},
+	{"bankCode":"0801040000","bankName":"中国银行","id":"4"},
+	{"bankCode":"0801000000","bankName":"中国邮政储蓄银行","id":"5"},
+	{"bankCode":"0803080000","bankName":"招商银行","id":"6"},
+	{"bankCode":"0803090000","bankName":"兴业银行","id":"7"},
+	{"bankCode":"0803030000","bankName":"中国光大银行","id":"8"},
+	{"bankCode":"0803060000","bankName":"广发银行","id":"9"},
+	{"bankCode":"0803050000","bankName":"中国民生银行","id":"11"},
+	{"bankCode":"0803100000","bankName":"浦发银行","id":"12"},
+	{"bankCode":"0803020000","bankName":"中信银行","id":"13"},
+	{"bankCode":"0804031000","bankName":"北京银行","id":"15"},
+	{"bankCode":"0803010000","bankName":"交通银行","id":"16"},
+	{"bankCode":"0803040000","bankName":"华夏银行","id":"18"}
+]

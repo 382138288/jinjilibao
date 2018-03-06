@@ -1,0 +1,28 @@
+{
+  "name": "h5-rebuild",
+  "description": "h5重构",
+  "authors": [
+    "丁浩文 <364593653@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.7",
+    "font-awesome": "font-awsome#^4.7.0",
+    "angular-ui-router": "^1.0.11",
+    "angular-sanitize": "^1.4.0",
+    "jquery": "^1.9.1",
+    "ngstorage": "ng-storage#^0.4.2",
+    "ng-dialog": "^1.4.0",
+    "angular-resource": "^1.6.9",
+    "angular-md5": "^0.1.10"
+  }
+}

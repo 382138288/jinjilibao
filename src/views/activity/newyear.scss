@@ -1,0 +1,138 @@
+.activity_newyear {
+    background: url(/images/activity/b.jpg);
+    .banner {
+        height: 448px;
+        background: url(/images/activity/newyear_banner.png) no-repeat center;
+        box-shadow: 0 15px 25px #dad5cb;
+        .banxin {
+            position: relative;
+        }
+        img {
+            margin-top: 10px;
+        }
+        .back {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 116px;
+            height: 45px;
+            cursor: pointer;
+        }
+    }
+    .content {
+        >h3 {
+            font-size: 26px;
+            color: #d9342f;
+            text-align: center;
+            padding-top: 45px;
+            padding-bottom: 30px;
+            font-weight: 700;
+        }
+        .activity_list {
+            .title {
+                text-align: center;
+                margin-bottom: 23px;
+            }
+            .intro_table {
+                position: relative;
+                text-align: center;
+                margin-bottom: 30px;
+                .money {
+                    position: absolute;
+                    left: 103px;
+                    top: -40px;
+                }
+                img:nth-child(2) {
+                    position: relative;
+                    z-index: 100;
+                }
+            }
+            .activity_rules {
+                margin-bottom: 34px;
+                h3,
+                p {
+                    color: #333;
+                    margin-left: 218px;
+                }
+                h3 {
+                    margin-bottom: 7px;
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+                p {
+                    line-height: 32px;
+                    font-size: 18px;
+                }
+                p:last-child {
+                    font-weight: 700;
+                }
+            }
+        }
+
+
+        .items_list {
+            position: relative;
+            .title {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            >img:first-of-type {
+                position: absolute;
+                right: -130px;
+                bottom: 19px;
+            }
+            ul {
+                position: relative;
+            }
+            li {
+                // width: 280px;
+                // height: 343px;
+                // border: 10px solid #fff2cc;
+                float: left;
+                z-index: 100;
+                margin-right: 23px;
+                margin-bottom: 33px;
+                box-shadow: 0 10px 15px #ccc;
+                // position: relative;
+                // box-sizing: border-box;
+                // background-color: #fff;
+                // p:first-child {
+                //     width: 130px;
+                //     height: 30px;
+                //     position: absolute;
+                //     right: 0;
+                //     top: 10px;
+                //     border-radius: 30px 0 0 30px;
+                //     background-color: #fff2cc;
+                //     color: #b02e2a;
+                // }
+                a {
+                    display: block;
+                    cursor: default;
+                }
+            }
+            li:nth-child(4),
+            li:nth-child(8),
+            li:last-child {
+                margin-right: 0;
+            }
+        }
+        .rules {
+            margin-top: 20px;
+            padding-bottom: 44px;
+            color: #333;
+            h3 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 7px;
+            }
+            p {
+                line-height: 32px;
+                font-size: 18px;
+            }
+            p:last-child {
+                font-weight: 700;
+            }
+        }
+    }
+}

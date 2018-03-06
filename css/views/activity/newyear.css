@@ -1,0 +1,116 @@
+.activity_newyear {
+  background: url(/images/activity/b.jpg);
+}
+.activity_newyear .banner {
+  height: 448px;
+  background: url(/images/activity/newyear_banner.png) no-repeat center;
+  box-shadow: 0 15px 25px #dad5cb;
+}
+.activity_newyear .banner .banxin {
+  position: relative;
+}
+.activity_newyear .banner img {
+  margin-top: 10px;
+}
+.activity_newyear .banner .back {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 116px;
+  height: 45px;
+  cursor: pointer;
+}
+.activity_newyear .content > h3 {
+  font-size: 26px;
+  color: #d9342f;
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 30px;
+  font-weight: 700;
+}
+.activity_newyear .content .activity_list .title {
+  text-align: center;
+  margin-bottom: 23px;
+}
+.activity_newyear .content .activity_list .intro_table {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.activity_newyear .content .activity_list .intro_table .money {
+  position: absolute;
+  left: 103px;
+  top: -40px;
+}
+.activity_newyear .content .activity_list .intro_table img:nth-child(2) {
+  position: relative;
+  z-index: 100;
+}
+.activity_newyear .content .activity_list .activity_rules {
+  margin-bottom: 34px;
+}
+.activity_newyear .content .activity_list .activity_rules h3,
+.activity_newyear .content .activity_list .activity_rules p {
+  color: #333;
+  margin-left: 218px;
+}
+.activity_newyear .content .activity_list .activity_rules h3 {
+  margin-bottom: 7px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.activity_newyear .content .activity_list .activity_rules p {
+  line-height: 32px;
+  font-size: 18px;
+}
+.activity_newyear .content .activity_list .activity_rules p:last-child {
+  font-weight: 700;
+}
+.activity_newyear .content .items_list {
+  position: relative;
+}
+.activity_newyear .content .items_list .title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.activity_newyear .content .items_list > img:first-of-type {
+  position: absolute;
+  right: -130px;
+  bottom: 19px;
+}
+.activity_newyear .content .items_list ul {
+  position: relative;
+}
+.activity_newyear .content .items_list li {
+  float: left;
+  z-index: 100;
+  margin-right: 23px;
+  margin-bottom: 33px;
+  box-shadow: 0 10px 15px #ccc;
+}
+.activity_newyear .content .items_list li a {
+  display: block;
+  cursor: default;
+}
+.activity_newyear .content .items_list li:nth-child(4),
+.activity_newyear .content .items_list li:nth-child(8),
+.activity_newyear .content .items_list li:last-child {
+  margin-right: 0;
+}
+.activity_newyear .content .rules {
+  margin-top: 20px;
+  padding-bottom: 44px;
+  color: #333;
+}
+.activity_newyear .content .rules h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.activity_newyear .content .rules p {
+  line-height: 32px;
+  font-size: 18px;
+}
+.activity_newyear .content .rules p:last-child {
+  font-weight: 700;
+}

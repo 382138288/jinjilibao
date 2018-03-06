@@ -1,0 +1,32 @@
+<div class="pagination">
+    <div class="pagination-box">
+        <a href ng-if="bill.pageOn>1" class="prev" ng-click="getList(bill.pageOn-1)">上一页</a>
+        <ul ng-if="bill.pages.length<7"><li ng-click="getList(a)" ng-repeat="a in bill.pages"><a href="" ng-class="{'active':bill.pageOn == a}">{{a}}</a></li></ul>
+        <ul ng-if="bill.pages.length>=7 && bill.pageOn<3">
+            <li ng-click="getList(1)"><a ng-class="{'active':bill.pageOn == 1}" href="">1</a></li>
+            <li ng-click="getList(2)"><a ng-class="{'active':bill.pageOn == 2}" href="">2</a></li>
+            <li ng-click="getList(3)"><a ng-class="{'active':bill.pageOn == 3}" href="">3</a></li>
+            <li ng-click="getList(4)"><a ng-class="{'active':bill.pageOn == 4}" href="">4</a></li>
+            <li><span>...</span></li>
+            <li ng-click="getList(bill.totalPage)"><a href="">{{bill.totalPage}}</a></li>
+        </ul>
+        <ul ng-if="bill.pages.length>=7 && bill.pageOn>=3 && bill.pageOn<=(bill.totalPage-2)">
+            <li ng-click="getList(1)"><a href="">1</a></li>
+            <li ng-if="bill.pageOn!=3"><span>...</span></li>
+            <li ng-click="getList(bill.pageOn-1)"><a href="">{{bill.pageOn-1}}</a></li>
+            <li ng-click="getList(bill.pageOn)"><a href="" class="active">{{bill.pageOn}}</a></li>
+            <li ng-click="getList(bill.pageOn+1)"><a href="">{{bill.pageOn+1}}</a></li>
+            <li ng-if="bill.pageOn!=(bill.totalPage-2)"><span>...</span></li>
+            <li ng-click="getList(bill.totalPage)"><a href="">{{bill.totalPage}}</a></li>
+        </ul>
+        <ul ng-if="bill.pages.length>=7 && bill.pageOn>(bill.totalPage-2)">
+            <li ng-click="getList(1)"><a href="">1</a></li>
+            <li><span>...</span></li>
+            <li ng-click="getList(bill.totalPage-3)"><a ng-class="{'active':bill.pageOn == (bill.totalPage-3)}" href="">{{bill.totalPage-3}}</a></li>
+            <li ng-click="getList(bill.totalPage-2)"><a ng-class="{'active':bill.pageOn == (bill.totalPage-2)}" href="">{{bill.totalPage-2}}</a></li>
+            <li ng-click="getList(bill.totalPage-1)"><a ng-class="{'active':bill.pageOn == (bill.totalPage-1)}" href="">{{bill.totalPage-1}}</a></li>
+            <li ng-click="getList(bill.totalPage)"><a ng-class="{'active':bill.pageOn == (bill.totalPage)}" href="">{{bill.totalPage}}</a></li>
+        </ul>
+        <a href ng-if="bill.pageOn<bill.totalPage" class="next" ng-click="getList(bill.pageOn+1)">下一页</a>
+    </div>
+</div>

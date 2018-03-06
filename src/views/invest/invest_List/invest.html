@@ -1,0 +1,101 @@
+<div>
+
+<!-- <float-menu></float-menu> -->
+<div class="bill-content-wrapper">
+	<div class="bill-list-wrap">
+
+		<!-- 优选 -->
+		<div class="billing-list billing-act">
+			<div class="bill-mode">
+
+				<div class="list-title">
+					<a href="/main/pastInvest"><i class="listicon-old"></i>往期产品</a>
+					<b class="listicon-you"></b>
+					<p>优选理财</p>
+					<div class="filter-wrap">
+						<span>排序：</span>
+						<ul>
+							<li ng-click="onClickPage('默认', 1, 2)" ng-class="{0:'actived',1:'',2:'',3:'',4:''}[an.order]">默认</li>
+							<li ng-click="onClickPage('利率', 1, 2)" ng-class="{0:'',1:'actived',2:'actived',3:'',4:''}[an.order]"><i ng-class="{1: 'bill-down', 2: 'bill-up'}[an.lv]"></i>历史年化收益</li>
+							<li ng-click="onClickPage('期限', 1, 2)" ng-class="{0:'',1:'',2:'',3:'actived',4:'actived'}[an.order]"><i ng-class="{3: 'bill-down', 4: 'bill-up'}[an.qx]"></i>期限</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="list-box">
+					<div class="list-mode-box" ng-repeat="item in map.page.rows" ng-if="item.type != 3">
+						<div class="list-mode hot-mode new-mode" 
+							ui-sref="main.billDetail({ id: item.id })" 
+							ng-class="{6: 'end-mode',7: 'end-mode',8: 'end-mode',9: 'end-mode'}[item.status]" 
+							ng-if="item.type != 1"
+						>
+							<i class="icon home-icons-hot" 
+								ng-class="{0:'bill-billingicon',1:'bill-hoticon'}[item.isHot]" 
+								ng-if="item.isHot == 1">
+							</i>
+							<i class="icon bill-send" ng-if="!item.atid"></i>
+							<i class="icon home-icons-activity" ng-if="item.atid"></i>
+
+							<div class="bill-name">
+								<div class="name">
+									<i class="public-yinicon" ng-if="item.billType == 2"></i>
+									<i class="public-shangicon" ng-if="item.billType == 1"></i>
+										{{item.fullName}}
+									<span class="honour-tip" ng-show="item.accept != undefined && item.accept != ''">
+										<i class="common-honour-icon"></i>
+											{{item.accept}}
+									</span>
+								</div>
+								<div class="feature-box">
+		                            <p class="feature">
+		                                <span ng-if="item.isInterest==1">加息券</span>
+		                                <span ng-if="item.isCash==1">红包</span>
+		                                <span ng-if="item.isDouble==1 ">翻倍券</span>
+		                                <span ng-if="item.isRepair==1 ">补标</span>
+		                            </p>
+		                        </div>
+
+							</div>
+
+							<ul>
+								<li class="invest-btn-box">
+									<div class="percentage-box">
+										<i>{{item.pert | setProgress}}%</i>
+										<div class="percentage"><span ng-attr-style="width: {{item.pert | setProgress}}%"></span></div>
+									</div>
+									<a href="" class="invest-btn" >{{(item.status | isProductType).cnvalue}}</a>
+								</li>
+								<li class="rate-box">
+									<p>
+										<span class="rate"><b>{{item.rate}}</b>%</span>
+										<i class="addrate" ng-if="item.activityRate !=undefined && item.activityRate>0">+{{item.activityRate}}%</i>
+									</p>
+									<i class="txt">历史年化收益</i>
+								</li>
+								<li class="line"></li>
+								<li class="term-box">
+									<p><span><b>{{item.deadline}}</b>天</span></p>
+									<i class="txt">期限</i>
+								</li>
+								<li class="line"></li>
+								<li class="start-box">
+									<p><span><b>{{item.leastaAmount |currency:'':0}}</b>元</span></p>
+									<i class="txt">起投金额</i>
+								</li>
+								<li class="line"></li>
+								<li class="total-box">
+									<p><span><b>{{item.amount |currency:'':0}}</b>元</span></p>
+									<i class="txt">总额</i>
+								</li>
+								<li class="line"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+                                             

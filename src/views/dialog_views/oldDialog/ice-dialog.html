@@ -1,0 +1,11 @@
+<div class="ice-dialog-wrapper">
+	<a href="" class="close" ng-click="closeDialog()"></a>
+	<div class="gold" ng-if="showGold">
+		<i></i>
+		<p>恭喜您<br>获得<span>{{getGoldNum}}</span>个金币</p>
+	</div>
+	<div class="gold none" ng-if="!showGold">
+		<i></i>
+		<p>眼前有金币，手中无冰锤，蓝瘦！<br>快赚砸冰机会去吧！</p>
+	</div>
+</div>

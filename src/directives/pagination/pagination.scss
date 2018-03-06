@@ -1,0 +1,50 @@
+
+.pagination{
+    margin: 0 auto;
+    // 页码
+    .pagination-box {
+        text-align: center;
+        a {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 15px;
+            color: #999999;
+            border: 1px solid #E8E8E8;
+            font-size: 16px;
+            // margin: 0 3px;
+            text-decoration: none;
+            box-sizing: border-box;
+            // &.active,&.prev,&.next{
+            //     background: #FFDB37;;
+            //     color: #333333;
+            //     border: none;
+            // }
+            &.active{
+                cursor: default;
+                background: #FFDB37;
+                color: #333333;
+                border-color: #FFDB37;
+            }
+            &:hover{
+                background: #FFDB37;
+                color: #333333;
+                border-color: #FFDB37;
+            }
+        }
+        ul {
+            display: inline-block;
+            // vertical-align: bottom;
+            li {
+                margin: 0 3px;
+                display: inline-block;
+                span{
+                    line-height: 40px;
+                    display: inline-block;
+                    height: 40px;
+                    color: #999999;
+                }
+            }
+        }
+    }
+}

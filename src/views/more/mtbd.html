@@ -1,0 +1,13 @@
+<div class="more-mtbd">
+    <img src="/images/more/mtbd-banner.png" alt="" class="banner">
+    <div class="mtbd-container">
+        <ul>
+            <li ng-repeat="item in ggList">
+                <a ui-sref="main.more.bdxq({newId:item.artiId,t:2})">{{item.title}}</a>
+                <span>{{item.createTime | date:"yyyy-MM-dd"}}</span>
+            </li>
+        </ul>
+
+        <pagination></pagination>
+    </div>
+</div>

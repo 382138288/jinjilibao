@@ -1,0 +1,22 @@
+<div class="bread-nav-wrapper">
+	<div class="bread-nav">
+		<!-- <div class="bread-box"><a href="">首页</a><span>></span><a href="">票据理财</a></div> -->
+	</div>
+</div>
+<div class="my-account-wrapper">
+	<div class="my-account-wrap">
+		<div class="my-account-side">
+			<i class="line"></i>
+			<div class="side-mode-list">
+				<menu></menu>
+			</div>
+			<div class="phone-wrap">
+				<p>{{(a | web).phoneLabel}}<i class="my-side-phone"></i></p>
+				<strong>{{(a | web).phone}}</strong>
+			</div>
+		</div>
+		<div class="my-account-content">
+			<div ui-view=""></div>
+		</div>
+	</div>
+</div>

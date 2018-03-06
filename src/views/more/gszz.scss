@@ -1,0 +1,41 @@
+.gszz-wrapper {
+    .license {
+        margin-bottom: 88px;
+        .nav {
+            padding-left: 21px;
+            border-bottom: 1px solid #ccc;
+            li {
+                float: left;
+                margin: 25px 0;
+                padding: 0 21px;
+                font-size: 16px;
+                border-right: 1px solid #ccc;
+                a {
+                    color: #ccc;
+                }
+                a.now {
+                    color: #000;
+                }
+            }
+            li:last-child {
+                border-right: none;
+            }
+        }
+
+        .license_title {
+            margin: 33px 0;
+            padding-left: 42px;
+            font-size: 20px;
+            i {
+                margin-top: 3px;
+                height: 20px;
+                border-left: 4px solid #000;
+                margin-right: 18px;
+            }
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
