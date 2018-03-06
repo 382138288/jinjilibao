@@ -1,50 +1,42 @@
 app
-    .run(function ($rootScope, $location, $localStorage,$transitions) {
-        $rootScope.version = '1.0.0';
-        // $rootScope.channel = 5;
+    .run(function ($rootScope, $location, $localStorage, $transitions, $templateCache, $filter, resourceService) {
 
-        // if (!$localStorage.registerObj) {
-        //     $localStorage.registerObj = {};
-        // }
-        // if ($location.search()) {
-        //     if ($location.search().toFrom) {
-        //         $localStorage.registerObj.toFrom = $location.search().toFrom;
-        //     }
-        //     if ($location.search().recommPhone) {
-        //         $localStorage.registerObj.recommPhone = $location.search().recommPhone;
-        //     }
-        //     if ($location.search().utm_content) {
-        //         $localStorage.registerObj.utm_content = $location.search().utm_content;
-        //     }
-        //     if ($location.search().utm_campaign) {
-        //         $localStorage.registerObj.utm_campaign = $location.search().utm_campaign;
-        //     }
-        //     if ($location.search().utm_kw) {
-        //         $localStorage.registerObj.utm_kw = $location.search().utm_kw;
-        //     }
-        // }
+        $rootScope.version = '1.0.0';
+        /* 
+            处理超时
+        */
+        $rootScope.$on('LOGIN_DEL_X-REQU', function () {
+            delete $http.defaults.headers.common['X-Requested-With'];
+        });
+        $rootScope.$on('LOGIN_OUT', function (event, url) {
+            delete $localStorage.user;
+            $templateCache.remove(url);
+            resourceService.queryPost($rootScope, $filter('交互接口对照表')('退出接口'), {}, '退出');
+            if ($localStorage.pathUrl != undefined) {
+                var pth = $localStorage.pathUrl.replace('/', '').replace('mainmyAccount', 'main.myAccount.')
+            } else {
+                $localStorage.pathUrl = pth = 'main.home';
+            }
+            if (pth.indexOf('main.myAccount')) {
+                $filter("跳转页面")('denLu', $localStorage.pathUrl, $localStorage.pathUrl);
+            } else if (pth.indexOf('main.newDetail')) {
+            } else if (pth.indexOf('newFriend')) {
+            } else {
+                $filter("跳转页面")('denLu', $localStorage.pathUrl, 'dl');
+            }
+
+            $rootScope.maskHidde = false;
+        });
 
         $rootScope.maskHidde = 0;
-        // $rootScope.goBack = function (backTo) {
-        //     if (backTo) {
-        //         window.history.go(backTo);
-        //     }
-        //     else {
-        //         window.history.go(-1);
-        //     }
-        // }
-        // $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
-        //     console.log('aaa')
-        //     $('html').scrollTop(0);
-        // })
         $transitions.onSuccess({ }, function(){
             $('html').scrollTop(0);
         });
     })
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         //用于改变state时跳至顶部
         // $uiViewScrollProvider.userAnchorScroll();
-
+        $httpProvider.interceptors.push('httpInterceptor');
         $locationProvider.html5Mode(true);
         var date = "?date=" + new Date().getTime();
         $stateProvider

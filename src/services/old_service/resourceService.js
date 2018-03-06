@@ -1,3 +1,29 @@
+app.factory('httpInterceptor', ['$q', '$injector', '$rootScope', function ($q, $injector, $rootScope) {
+	var httpInterceptor = {
+		'responseError': function (response) {
+			return $q.reject("response", response);
+		},
+		'response': function (response) {
+			if (response.headers("sessionstatus") == "timeout") {
+				if (response.config.url != "Login" && response.config.url != "user/toLogin") {
+					$rootScope.$emit("LOGIN_OUT", response.config.url);
+					return false;
+				}
+			}
+			return response;
+		},
+		'request': function (config) {
+			if (config.url != "Login" && config.url != "user/toLogin" && config.url != "/user/findWhiteCollarApartmentByUserName") {
+				config.headers['X-Requested-With'] = "XMLHttpRequest";
+			}
+			return config;
+		},
+		'requestError': function (config) {
+			return $q.reject(config);
+		}
+	};
+	return httpInterceptor;
+}]);
 /*
     username注意
     grid = 表格数据
@@ -44,6 +70,7 @@ app.factory(
 	};
 }]);
 function resourceService(resource, http , $state, $rootScope, ngDialog, $filter,$localStorage) {
+	
 	var actions = {
 		'query':{
             method:'GET'

@@ -9,87 +9,85 @@ var app = angular.module('angularJsPC',[
     'angular-md5'
 ]);
 app
+<<<<<<< .mine
+    .run(function ($rootScope, $location, $localStorage, $transitions) {
+||||||| .r776
     .run(function ($rootScope, $location, $localStorage,$transitions) {
-        $rootScope.version = '1.0.0';
-        // $rootScope.channel = 5;
+=======
+    .run(function ($rootScope, $location, $localStorage, $transitions, $templateCache, $filter, resourceService) {
 
-        // if (!$localStorage.registerObj) {
-        //     $localStorage.registerObj = {};
-        // }
-        // if ($location.search()) {
-        //     if ($location.search().toFrom) {
-        //         $localStorage.registerObj.toFrom = $location.search().toFrom;
-        //     }
-        //     if ($location.search().recommPhone) {
-        //         $localStorage.registerObj.recommPhone = $location.search().recommPhone;
-        //     }
-        //     if ($location.search().utm_content) {
-        //         $localStorage.registerObj.utm_content = $location.search().utm_content;
-        //     }
-        //     if ($location.search().utm_campaign) {
-        //         $localStorage.registerObj.utm_campaign = $location.search().utm_campaign;
-        //     }
-        //     if ($location.search().utm_kw) {
-        //         $localStorage.registerObj.utm_kw = $location.search().utm_kw;
-        //     }
-        // }
+>>>>>>> .r781
+        $rootScope.version = '1.0.0';
+        /* 
+            处理超时
+        */
+        $rootScope.$on('LOGIN_DEL_X-REQU', function () {
+            delete $http.defaults.headers.common['X-Requested-With'];
+        });
+        $rootScope.$on('LOGIN_OUT', function (event, url) {
+            delete $localStorage.user;
+            $templateCache.remove(url);
+            resourceService.queryPost($rootScope, $filter('交互接口对照表')('退出接口'), {}, '退出');
+            if ($localStorage.pathUrl != undefined) {
+                var pth = $localStorage.pathUrl.replace('/', '').replace('mainmyAccount', 'main.myAccount.')
+            } else {
+                $localStorage.pathUrl = pth = 'main.home';
+            }
+            if (pth.indexOf('main.myAccount')) {
+                $filter("跳转页面")('denLu', $localStorage.pathUrl, $localStorage.pathUrl);
+            } else if (pth.indexOf('main.newDetail')) {
+            } else if (pth.indexOf('newFriend')) {
+            } else {
+                $filter("跳转页面")('denLu', $localStorage.pathUrl, 'dl');
+            }
+
+            $rootScope.maskHidde = false;
+        });
 
         $rootScope.maskHidde = 0;
-        // $rootScope.goBack = function (backTo) {
-        //     if (backTo) {
-        //         window.history.go(backTo);
-        //     }
-        //     else {
-        //         window.history.go(-1);
-        //     }
-        // }
-        // $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
-        //     console.log('aaa')
-        //     $('html').scrollTop(0);
-        // })
-        $transitions.onSuccess({ }, function(){
+        $transitions.onSuccess({}, function () {
             $('html').scrollTop(0);
         });
     })
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         //用于改变state时跳至顶部
         // $uiViewScrollProvider.userAnchorScroll();
-
+        $httpProvider.interceptors.push('httpInterceptor');
         $locationProvider.html5Mode(true);
         var date = "?date=" + new Date().getTime();
         $stateProvider
             /*金吉利宝注册协议*/
             .state('zc', {
                 url: '/zc',
-                templateUrl: 'views/protocol_pages/zc.html' + date 
+                templateUrl: 'views/protocol_pages/zc.html' + date
             })
             /*借款协议*/
             .state('loan', {
                 url: '/loan?idx&pid&uid&investId',
-                templateUrl: 'views/protocol_pages/loan.html' + date 
+                templateUrl: 'views/protocol_pages/loan.html' + date
             })
             /*借款协议*/
             .state('storage', {
                 url: '/storage',
-                templateUrl: 'views/protocol_pages/storage.html' + date 
+                templateUrl: 'views/protocol_pages/storage.html' + date
             })
             /*APP支付协议*/
             .state('pay', {
                 url: '/pay',
-                templateUrl: 'views/protocol_pages/pay.html' + date 
+                templateUrl: 'views/protocol_pages/pay.html' + date
             })
             // 注册页
             .state('register', {
                 url: '/register? recommPhone & toFrom & recommCode & backPath',
                 templateUrl: 'views/login_page/register/register.html' + date,
                 controller: 'RegisterController'
-            }) 
+            })
             // 登录页
             .state('login', {
                 url: '/login?backPath',
                 templateUrl: 'views/login_page/login/login.html' + date,
                 controller: 'LoginController'
-            }) 
+            })
             .state('main', {
                 abstract: true,
                 url: '/main',
@@ -112,7 +110,7 @@ app
                 templateUrl: 'views/invest/invest_List/invest.html' + date,
                 controller: 'InvestController'
             })
-             /*产品列表页*/
+            /*产品列表页*/
             .state('main.pastInvest', {
                 url: '/pastInvest',
                 templateUrl: 'views/invest/invest_List/past-invest.html' + date,
@@ -151,25 +149,25 @@ app
             .state('main.more.mtbd', {
                 url: '/mtbd',
                 templateUrl: 'views/more/mtbd.html' + date,
-                controller:'MTBDController'
+                controller: 'MTBDController'
             })
             // 报道详情
             .state('main.more.bdxq', {
                 url: '/bdxq?newId',
                 templateUrl: 'views/more/bdxq.html' + date,
-                controller:'BDXQController'
+                controller: 'BDXQController'
             })
             // 网站公告
             .state('main.more.wzgg', {
                 url: '/wzgg',
                 templateUrl: 'views/more/wzgg.html' + date,
-                controller:'WZGGController'
+                controller: 'WZGGController'
             })
             // 公告详情
             .state('main.more.ggxq', {
                 url: '/ggxq?newId',
                 templateUrl: 'views/more/ggxq.html' + date,
-                controller:'GGXQController'
+                controller: 'GGXQController'
             })
             .state('main.more.lxwm', {
                 url: '/lxwm',
@@ -225,7 +223,7 @@ app
                 templateUrl: 'views/account/accountHome.html' + date,
                 controller: 'accountHomeCtrl'
             })
-            
+
             //我的账户-我的资产-我的投资
             .state('main.myAccount.accountMyInvest', {
 
@@ -293,7 +291,7 @@ app
                 templateUrl: 'views/account/myMessage/accountMyMsg.html' + date,
                 controller: 'accountMyMsgCtrl'
             })
-            
+
             // 活动
             .state('activity', {
                 abstract: true,
@@ -301,16 +299,16 @@ app
                 templateUrl: 'views/common/activity.html' + date,
                 controller: 'ActivityController'
             })
-                    // 新年活动
+            // 新年活动
             .state('activity.newyear', {
                 url: '/newyear',
                 templateUrl: 'views/activity/newyear/newyear.html' + date,
                 controller: 'NewyearController'
             })
-                    // 邀请好友
-             .state('activity.investFriends', {
+            // 邀请好友
+            .state('activity.investFriends', {
                 url: '/investFriends',
-                 templateUrl: 'views/activity/friends/invest_friends.html' + date,
+                templateUrl: 'views/activity/friends/invest_friends.html' + date,
                 controller: 'InvestFriendsController'
             })
 
@@ -721,26 +719,6 @@ app.service('httpService', function ($rootScope,$http, $filter,ngDialog,$localSt
 
 
 app.directive(
-    'pagination',
-    function () {
-        return {
-            restrict: 'E',
-            templateUrl: 'directives/pagination/pagination.html',
-            replace: true,
-            // transclude: true,
-            // scope: true,
-            // controller: [
-            //     '$scope',
-            //     '$filter',
-            //     'resourceService',
-            //     function ($scope, $filter, resourceService) {
-
-            //     }]
-
-        };
-    }
-);
-app.directive(
         'menu',
         function() {
             var temp='<div class="side-mode" ng-class="{true: \'active-mode\', false: \'\'}[activeText == tool.memnTitle]" ng-repeat="tool in menuItems">'+
@@ -808,6 +786,26 @@ app.directive(
             };
         }
     );
+app.directive(
+    'pagination',
+    function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'directives/pagination/pagination.html',
+            replace: true,
+            // transclude: true,
+            // scope: true,
+            // controller: [
+            //     '$scope',
+            //     '$filter',
+            //     'resourceService',
+            //     function ($scope, $filter, resourceService) {
+
+            //     }]
+
+        };
+    }
+);
 /* 
  * @Author: lee
  * @Date:   2016-01-23 10:37:01
@@ -2893,6 +2891,32 @@ app
         })
 
 
+app.factory('httpInterceptor', ['$q', '$injector', '$rootScope', function ($q, $injector, $rootScope) {
+	var httpInterceptor = {
+		'responseError': function (response) {
+			return $q.reject("response", response);
+		},
+		'response': function (response) {
+			if (response.headers("sessionstatus") == "timeout") {
+				if (response.config.url != "Login" && response.config.url != "user/toLogin") {
+					$rootScope.$emit("LOGIN_OUT", response.config.url);
+					return false;
+				}
+			}
+			return response;
+		},
+		'request': function (config) {
+			if (config.url != "Login" && config.url != "user/toLogin" && config.url != "/user/findWhiteCollarApartmentByUserName") {
+				config.headers['X-Requested-With'] = "XMLHttpRequest";
+			}
+			return config;
+		},
+		'requestError': function (config) {
+			return $q.reject(config);
+		}
+	};
+	return httpInterceptor;
+}]);
 /*
     username注意
     grid = 表格数据
@@ -2939,6 +2963,7 @@ app.factory(
 	};
 }]);
 function resourceService(resource, http , $state, $rootScope, ngDialog, $filter,$localStorage) {
+	
 	var actions = {
 		'query':{
             method:'GET'
@@ -3380,6 +3405,8 @@ function(
                     $scope.oldList.push($scope.list[i]);
                 }
             }
+            console.log($scope.newList);
+            console.log($scope.oldList);
             if ($scope.newList.length > 4) {
                 $scope.showNewBtn = true;
             } else {

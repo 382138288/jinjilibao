@@ -66,6 +66,8 @@ function(
                     $scope.oldList.push($scope.list[i]);
                 }
             }
+            console.log($scope.newList);
+            console.log($scope.oldList);
             if ($scope.newList.length > 4) {
                 $scope.showNewBtn = true;
             } else {

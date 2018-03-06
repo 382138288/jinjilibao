@@ -27,7 +27,18 @@ a{
 		text-decoration: underline;
 	}
 }
+.left {
+    float: left
+}
 
+.right {
+    float: right
+}
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both
+}
 $font: 12px/1.5 "Microsoft Yahei",arial,tahoma,"Hiragino Sans GB",\5b8b\4f53;
 html{
 	overflow: scroll;

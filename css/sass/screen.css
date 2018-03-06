@@ -854,6 +854,20 @@ a:hover, .together-wrapper .together-wrap .together-box .together-list .list-wra
   text-decoration: underline;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
 html {
   overflow: scroll;
 }
